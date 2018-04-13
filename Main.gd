@@ -1,10 +1,17 @@
 extends ColorRect
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "pisa", "pie", "púa", "mío", "cose"]
+var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
+var words_nbvfh = ["vaso", "vaca", "bota", "boca", "foca", "feo", "fila", "café", "vino", "pino", "nata", "rana", "sofá", "camino", "luna", "lana", "piano", "vela", "fuma", "oveja", "abeja", "humo", "búho", "hoja", "hielo", "cohete"]
+var words_dgllchr = ["nido", "llave", "valla", "gato", "goma", "gusano", "caballo", "cara", "pirata", "llora", "tira", "mago", "dedo", "dado", "codo", "gallina", "coche", "leche", "chino", "chupete", "ocho", "oro", "ducha", "moda", "paga", "hora", "médico", "madera"]
+var words_nyx = ["piña", "caña", "niña", "rayo", "payaso", "taxi", "boxeo", "baño", "yema", "cabaña", "araña"]
+var words_quceci = ["queso", "quema", "raqueta", "quita", "pequeño", "máquina", "cine", "cena", "cereza", "cero", "maceta", "cielo"]
+var words_pluri = ["aramelo", "mariposa", "gasolina", "palomitas", "bocadillo", "amapola", "lavadora", "mecánico", "marinero"]
+var words_mixed = ["sol", "pez", "luz", "mar", "sal", "dos", "azul", "pan", "melón", "papel", "lápiz", "comer", "manos", "salta", "corta", "barco", "canta", "pistola", "mosca", "soldado", "montaña", "castillo", "martillo", "circo", "pantalón", "banco", "calza", "multa", "perdido"]
+var words_inverse = ["espejo", "espada", "isla", "arma", "alto", "astuto", "ancho", "espina", "escudo", "asco", "antes", "indio"]
+var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase", "bruja", "tripa", "fresa", "grúa", "brazo", "fruta", "sobre", "tigre", "sopla", "dobla", "abre", "otro"]
+var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta", "cresta", "frente", "presta"]
 
-var words = ["amasar", "lima", "mesa", "misa", "muela",  "museo",  "paloma",  "pamela",  "pomelo",  "pomo",  "suma"]
 var spaces = []
 var mode
 var incorrect_letter
@@ -16,6 +23,7 @@ const MODE_ANIM = 1
 var letter_buttons = []
 var current_word = ""
 var word_index = 0
+var words = []
 var shuffled_words
 var failsafe
 
@@ -23,10 +31,38 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	randomize()
+	words = choose_valid_words()
 	shuffled_words = shuffle_list(words)
 	word_index = 0
 	new_word()
 	
+func choose_valid_words():
+	var w = []
+	if globals.words_mslcp_enabled:
+		w += words_mslcp
+	if globals.words_tjzr_enabled:
+		w += words_tjzr
+	if globals.words_nbvfh_enabled:
+		w += words_nbvfh
+	if globals.words_dgllchr_enabled:
+		w += words_dgllchr
+	if globals.words_nyx_enabled:
+		w += words_nyx
+	if globals.words_quceci_enabled:
+		w += words_quceci
+	if globals.words_pluri_enabled:
+		w += words_pluri
+	if globals.words_mixed_enabled:
+		w += words_mixed
+	if globals.words_inverse_enabled:
+		w += words_inverse
+	if globals.words_locked_enabled:
+		w += words_locked
+	if globals.words_complex_enabled:
+		w += words_complex
+		
+	return w
+
 	
 func new_word():
 	for l in spaces:

@@ -1357,15 +1357,27 @@ bus = "Master"
 
 [connection signal="gui_input" from="Word1/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 1 ]]
 
+[connection signal="gui_input" from="Word1/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 1 ]]
+
 [connection signal="gui_input" from="Word2/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 2 ]]
+
+[connection signal="gui_input" from="Word2/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 2 ]]
 
 [connection signal="gui_input" from="Word3/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 3 ]]
 
+[connection signal="gui_input" from="Word3/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 3 ]]
+
 [connection signal="gui_input" from="Word4/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 4 ]]
+
+[connection signal="gui_input" from="Word4/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 4 ]]
 
 [connection signal="gui_input" from="Word5/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 5 ]]
 
+[connection signal="gui_input" from="Word5/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 5 ]]
+
 [connection signal="gui_input" from="Word6/VBoxContainer/pictures/img" to="." method="_on_img_gui_input" binds= [ 6 ]]
+
+[connection signal="gui_input" from="Word6/VBoxContainer/pictures/lbl" to="." method="_on_img_gui_input" binds= [ 6 ]]
 
 [connection signal="pressed" from="ButtonReload" to="." method="_on_ButtonReload_pressed"]
 

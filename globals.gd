@@ -6,9 +6,23 @@ var num_syllables = 1
 var all_alphabet = false
 var valid_letters = []
 
+var words_mslcp_enabled = true
+var words_tjzr_enabled = false
+var words_nbvfh_enabled = false
+var words_dgllchr_enabled = false
+var words_nyx_enabled = false
+var words_quceci_enabled = false
+var words_pluri_enabled = false
+var words_mixed_enabled = false
+var words_inverse_enabled = false
+var words_locked_enabled = false
+var words_complex_enabled = false
+
+
 
 	
 func load_game():
+	#TODO
 	return
 	var F = File.new() # We initialize the File class
 	var D = Directory.new() # and the Directory class
@@ -16,7 +30,6 @@ func load_game():
 		if F.open(str("user://save/abcirene.save"), File.READ_WRITE) == OK: # If the opening of the save file returns OK
 			var temp_d # we create a temporary var to hold the contents of the save file
 			temp_d = F.get_var() # we get the contents of the save file and store it on TEMP_D
-			print(temp_d)
 			globals.see_words = temp_d["see_words"]
 			globals.num_words = temp_d["num_words"]
 			globals.num_syllables = temp_d["num_syllables"]
@@ -31,6 +44,7 @@ func load_game():
 		save_game() # and we create the save file using the save_game function
 
 func save_game():
+	#TODO
 	return
 	var current_save_game = {
 		"see_words": globals.see_words,

@@ -1,6 +1,7 @@
 extends Button
 
 var letter
+var simple_letter
 
 func _ready():
 	# Called every time the node is added to the scene.
@@ -9,6 +10,17 @@ func _ready():
 
 func set_letter(l):
 	letter = l
+	simple_letter = l
+	if l == "á":
+		simple_letter = "a"
+	if l == "é":
+		simple_letter = "e"
+	if l == "í":
+		simple_letter = "i"
+	if l == "ó":
+		simple_letter = "o"
+	if l == "ú":
+		simple_letter = "u"
 	
 func mark_as_correct():
 	get_node("ColorRect").color = Color(0, 1, 0, 1)
