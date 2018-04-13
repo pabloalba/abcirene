@@ -5,7 +5,7 @@
 [ext_resource path="res://font_escolar_112.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/img/abc.png" type="Texture" id=4]
 
-[node name="MainMenu" type="ColorRect"]
+[node name="MainMenu" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,7 +107,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 144.0
 margin_right = 568.0
-margin_bottom = 474.0
+margin_bottom = 558.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0

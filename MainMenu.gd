@@ -5,13 +5,7 @@ extends ColorRect
 # var b = "textvar"
 
 func _ready():
-	globals.load_game()
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
+	globals.load_game()	
 
 func _on_BtnOptions_pressed():
 	get_tree().change_scene("res://Options.tscn")

@@ -25,19 +25,7 @@ func _load_old_options():
 	get_node("VBoxContainer/GridGroups/ChkGroupMixed").set_pressed(globals.words_mixed_enabled)
 	get_node("VBoxContainer/GridGroups/ChkGroupInverse").set_pressed(globals.words_inverse_enabled)
 	get_node("VBoxContainer/GridGroups/ChkGroupLocked").set_pressed(globals.words_locked_enabled)
-	get_node("VBoxContainer/GridGroups/ChkGroupComplex").set_pressed(globals.words_complex_enabled)
-	
-	
-	if globals.valid_letters:
-		for chk in get_node("VBoxContainer/GrdLetters").get_children():
-			if chk.text in globals.valid_letters:
-				chk.set_pressed(true)
-		get_node("VBoxContainer/ChkLetters").set_pressed(true)
-		get_node("VBoxContainer/GrdLetters").show()
-	else:
-		get_node("VBoxContainer/ChkLetters").set_pressed(false)
-		get_node("VBoxContainer/GrdLetters").hide()
-
+	get_node("VBoxContainer/GridGroups/ChkGroupComplex").set_pressed(globals.words_complex_enabled)	
 
 
 func _on_ChkLetters_toggled( button_pressed ):
@@ -107,12 +95,3 @@ func _on_ChkWords_pressed(num):
 	button.set_pressed(true)
 
 
-func _on_ChkSyllables_pressed(num):
-	globals.num_syllables = num
-	var button = get_node("VBoxContainer/HBoxContainer3/ChkSyllables"+str(num))
-	var pressed = button.pressed
-	if (pressed):		
-		get_node("VBoxContainer/HBoxContainer3/ChkSyllables1").set_pressed(false)
-		get_node("VBoxContainer/HBoxContainer3/ChkSyllables2").set_pressed(false)
-		get_node("VBoxContainer/HBoxContainer3/ChkSyllables3").set_pressed(false)
-	button.set_pressed(true)
