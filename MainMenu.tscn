@@ -5,7 +5,7 @@
 [ext_resource path="res://font_escolar_112.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/img/abc.png" type="Texture" id=4]
 
-[node name="MainMenu" type="ColorRect" index="0"]
+[node name="MainMenu" type="ColorRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0

@@ -32,3 +32,6 @@ func mark_as_incorrect():
 func mark_as_current():
 	get_node("ColorRect").color = Color(1, 1, 1, 1)
 	
+func mark_as_success():
+	get_node("ColorRect").color = Color(0, 1, 1, 1)
+	

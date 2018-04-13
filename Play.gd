@@ -2,6 +2,7 @@ extends ColorRect
 
 const MODE_PLAYER = 0
 const MODE_ANIM = 1
+const MODE_SUCCESS = 2
 
 var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "pisa", "pie", "púa", "mío", "cose"]
 var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
@@ -51,6 +52,7 @@ func _ready():
 func restart_game():
 	
 	for space in spaces:
+		if space != null:
 			var parent = space.get_parent ()
 			parent.remove_child(space)
 			space.queue_free()
@@ -134,6 +136,10 @@ func _process(delta):
 		failsafe -= delta
 		if failsafe <=0:
 			end_anim()				
+	if mode == MODE_SUCCESS:			
+		failsafe -= delta
+		if failsafe <=0:
+			end_success()				
 			
 func end_anim():
 	spaces[current_space_num].mark_as_current()
@@ -169,7 +175,9 @@ func create_word(num, total, word):
 		var space = load("res://Space.tscn").instance()
 		space.set_letter(word[i])
 		container.get_node("VBoxContainer/letters").add_child(space)
-		spaces.append(space)	
+		spaces.append(space)
+		
+	spaces.append(null)
 		
 		
 	if total == 1:
@@ -254,16 +262,37 @@ func _on_letter_pressed(l):
 	if mode == MODE_PLAYER and current_space_num < len(spaces):
 		if spaces[current_space_num].simple_letter == l:
 			spaces[current_space_num].mark_as_correct()
-			current_space_num += 1
+			current_space_num += 1			
 			if current_space_num < len(spaces):
-				spaces[current_space_num].mark_as_current()
+				if (spaces[current_space_num] == null):
+					# word end
+					start_success()
+				else:
+					spaces[current_space_num].mark_as_current()
+				
 		else:
 			mode = MODE_ANIM
 			spaces[current_space_num].mark_as_incorrect()
 			failsafe = 1
 			
 		
-
+func start_success():
+	mode = MODE_SUCCESS	
+	failsafe = 1
+	var i = current_space_num -1
+	while i >= 0 and spaces[i] != null:		
+		spaces[i].mark_as_success()
+		i -= 1
+	
+func end_success():	
+	var i = current_space_num -1
+	while i >= 0 and spaces[i] != null:		
+		spaces[i].mark_as_correct()
+		i -= 1
+	current_space_num += 1
+	if current_space_num < len(spaces):
+		spaces[current_space_num].mark_as_current()
+	mode = MODE_PLAYER
 
 
 func _on_img_gui_input( ev, num ):
