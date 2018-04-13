@@ -19,6 +19,7 @@ var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanc
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var full_alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","á","é","í","ó","ú"]
 var drag = false
 var mode = MODE_PLAYER
 var letter_pos = Vector2()
@@ -67,7 +68,7 @@ func restart_game():
 		var all_words = ""
 		for w in current_words:
 			all_words += w
-		for l in alphabet:
+		for l in full_alphabet:
 			if l in all_words:
 				if l == "á":
 					l = "a"
@@ -251,11 +252,13 @@ func shuffle_list(list):
 
 
 func _on_ButtonBack_pressed():
-	get_tree().change_scene("res://MainMenu.tscn")
+	if mode == MODE_PLAYER:
+		get_tree().change_scene("res://MainMenu.tscn")
 
 
 func _on_ButtonReload_pressed():
-	restart_game()
+	if mode == MODE_PLAYER:
+		restart_game()
 
 
 func _on_letter_pressed(l):
