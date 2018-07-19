@@ -13,3 +13,16 @@ func _on_BtnOptions_pressed():
 
 func _on_BtnPlay_pressed():
 	get_tree().change_scene("res://Play.tscn")
+
+
+func _on_btnOpciones_pressed():
+	get_tree().change_scene("res://Options.tscn")
+
+
+func _on_btnPalabras_pressed():
+	get_tree().change_scene("res://Play.tscn")
+
+
+func _on_btnFrases_pressed():
+	# get_tree().change_scene("res://Play.tscn")
+	pass
