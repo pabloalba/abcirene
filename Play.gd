@@ -33,6 +33,7 @@ var word_index = 0
 var shuffled_words = []
 var current_space_num = 0
 var current_words
+var words_letters = []
 
 func _ready():	
 	randomize() 
@@ -64,7 +65,7 @@ func restart_game():
 	if globals.all_alphabet:
 		addValidLetters(alphabet)
 	else:
-		var words_letters = []
+		words_letters = []
 		var all_words = ""
 		for w in current_words:
 			all_words += w
@@ -129,8 +130,11 @@ func select_words():
 	return w
 		
 func addValidLetters(letters):	
-	for l in get_node("GridContainer").get_children():
-		l.set_disabled(!l.get_text() in letters)
+	for l in get_node("GridContainer").get_children():		
+		if (l.get_node("Label").get_text() in letters):
+			l.get_node("Label").set("custom_colors/font_color", "#FFFFFF")
+		else:
+			l.get_node("Label").set("custom_colors/font_color", "#807f85")
 
 func _process(delta):	
 	if mode == MODE_ANIM:			
@@ -173,7 +177,7 @@ func create_word(num, total, word):
 		label.hide()
 		
 	for i in range(len(word)):
-		var space = load("res://Space.tscn").instance()
+		var space = load("res://WordLetter.tscn").instance()
 		space.set_letter(word[i])
 		container.get_node("VBoxContainer/letters").add_child(space)
 		spaces.append(space)
@@ -183,61 +187,61 @@ func create_word(num, total, word):
 		
 	if total == 1:
 		container.set_scale(Vector2(0.8, 0.8))
-		container.position.x = 440
-		container.position.y = 0
+		container.position.x = 410
+		container.position.y = 60
 	if total == 2:
-		container.set_scale(Vector2(0.8, 0.8))
+		container.set_scale(Vector2(0.7, 0.7))
 		if num == 0:
 			container.position.x = 100
-			container.position.y = 0
+			container.position.y = 60
 		else:
 			container.position.x = 700
-			container.position.y = 0
+			container.position.y = 60
 	if total == 3:
-		container.set_scale(Vector2(0.5, 0.5))
+		container.set_scale(Vector2(0.45, 0.45))
 		if num == 0:
-			container.position.x = 50
-			container.position.y = 100
+			container.position.x = 110
+			container.position.y = 115
 		elif num == 1:
-			container.position.x = 500
-			container.position.y = 100
+			container.position.x = 475
+			container.position.y = 115
 		else:
-			container.position.x = 900
-			container.position.y = 100
+			container.position.x = 840
+			container.position.y = 115
 	if total == 4:
 		container.set_scale(Vector2(0.4, 0.4))
 		if num == 0:
-			container.position.x = 200
-			container.position.y = 0
+			container.position.x = 110
+			container.position.y = 70
 		elif num == 1:
-			container.position.x = 800
-			container.position.y = 0
+			container.position.x = 645
+			container.position.y = 70
 		elif num == 2:
-			container.position.x = 200
-			container.position.y = 200
+			container.position.x = 110
+			container.position.y = 230
 		else:
-			container.position.x = 800
-			container.position.y = 200
+			container.position.x = 645
+			container.position.y = 230
 	if total == 6:
-		container.set_scale(Vector2(0.4, 0.4))
+		container.set_scale(Vector2(0.35, 0.35))
 		if num == 0:
-			container.position.x = 100
-			container.position.y = 0
+			container.position.x = 110
+			container.position.y = 70
 		elif num == 1:
-			container.position.x = 550
-			container.position.y = 0
+			container.position.x = 475
+			container.position.y = 70
 		elif num == 2:
-			container.position.x = 950
-			container.position.y = 0
+			container.position.x = 840
+			container.position.y = 70
 		elif num == 3:
-			container.position.x = 100
-			container.position.y = 200
+			container.position.x = 110
+			container.position.y = 230
 		elif num == 4:
-			container.position.x = 550
-			container.position.y = 200
+			container.position.x = 475
+			container.position.y = 230
 		elif num == 5:
-			container.position.x = 950
-			container.position.y = 200	
+			container.position.x = 840
+			container.position.y = 230	
 	container.show()
 	
 func shuffle_list(list):
@@ -306,3 +310,11 @@ func _on_img_gui_input( ev, num ):
 				var sfx = load("res://assets/audio/" + safe_name + ".wav") 
 				get_node("AudioStreamPlayer").stream = sfx
 				get_node("AudioStreamPlayer").play()
+
+
+func _on_Letter_gui_input(ev, l):
+	if ev is InputEventMouseButton:
+		if ev.button_index == BUTTON_LEFT:
+			if ev.pressed:
+				if globals.all_alphabet or l in words_letters:
+					_on_letter_pressed(l)

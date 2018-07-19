@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Play.gd" type="Script" id=1]
 [ext_resource path="res://font_escolar_112.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/img/reload.png" type="Texture" id=3]
-[ext_resource path="res://assets/img/return.png" type="Texture" id=4]
-[ext_resource path="res://font_escolar_80.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/img/logoABC.png" type="Texture" id=4]
+[ext_resource path="res://assets/img/return.png" type="Texture" id=5]
+[ext_resource path="res://assets/img/keboard_button.png" type="Texture" id=6]
+[ext_resource path="res://font_escolar_80.tres" type="DynamicFont" id=7]
 
-[node name="Play" type="ColorRect"]
+[node name="Play" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -15,6 +17,7 @@ anchor_bottom = 0.0
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -34,6 +37,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -50,6 +54,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -68,6 +73,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -85,6 +91,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -106,12 +113,13 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "custom_constants" ]
 
 [node name="Word2" type="Node2D" parent="." index="1"]
 
@@ -124,6 +132,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -140,6 +149,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -158,6 +168,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -175,6 +186,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -196,6 +208,7 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -214,6 +227,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -230,6 +244,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -248,6 +263,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -265,6 +281,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -286,6 +303,7 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -304,6 +322,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -320,6 +339,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -338,6 +358,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -355,6 +376,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -376,6 +398,7 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -394,6 +417,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -410,6 +434,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -428,6 +453,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -445,6 +471,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -466,6 +493,7 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -484,6 +512,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -500,6 +529,7 @@ anchor_bottom = 0.0
 margin_right = 500.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -518,6 +548,7 @@ margin_left = 245.0
 margin_right = 245.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -535,6 +566,7 @@ margin_left = 255.0
 margin_right = 255.0
 margin_bottom = 134.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -556,6 +588,7 @@ margin_top = 138.0
 margin_right = 500.0
 margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
@@ -569,11 +602,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1196.0
+margin_left = 1088.0
 margin_top = 6.0
-margin_right = 1272.0
-margin_bottom = 59.0
+margin_right = 1275.0
+margin_bottom = 87.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -586,8 +620,30 @@ group = null
 icon = ExtResource( 3 )
 flat = true
 align = 1
+_sections_unfolded = [ "Rect" ]
 
-[node name="ButtonBack" type="Button" parent="." index="7"]
+[node name="TextureRect" type="TextureRect" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 550.0
+margin_top = 23.0
+margin_right = 1191.0
+margin_bottom = 133.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="ButtonBack" type="Button" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -596,8 +652,9 @@ anchor_bottom = 0.0
 margin_left = 6.0
 margin_top = 6.0
 margin_right = 82.0
-margin_bottom = 59.0
+margin_bottom = 75.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -607,750 +664,1187 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 4 )
+icon = ExtResource( 5 )
 flat = true
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="GridContainer" type="GridContainer" parent="." index="8"]
+[node name="GridContainer" type="GridContainer" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 50.0
+margin_left = 110.0
 margin_top = 400.0
-margin_right = 1250.0
-margin_bottom = 828.0
+margin_right = 1290.0
+margin_bottom = 800.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_constants/hseparation = 50
+custom_constants/hseparation = 30
 columns = 10
 _sections_unfolded = [ "Rect", "custom_constants" ]
 
-[node name="Button" type="Button" parent="GridContainer" index="0"]
+[node name="Letter" type="TextureRect" parent="GridContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 75.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_right = 82.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "q"
-flat = false
 align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button2" type="Button" parent="GridContainer" index="1"]
+[node name="Letter2" type="TextureRect" parent="GridContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_right = 201.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 112.0
+margin_right = 194.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "w"
-flat = false
 align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button3" type="Button" parent="GridContainer" index="2"]
+[node name="Letter3" type="TextureRect" parent="GridContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 251.0
-margin_right = 326.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 224.0
+margin_right = 306.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "e"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button4" type="Button" parent="GridContainer" index="3"]
+[node name="Letter4" type="TextureRect" parent="GridContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 376.0
-margin_right = 451.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 336.0
+margin_right = 418.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "r"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button5" type="Button" parent="GridContainer" index="4"]
+[node name="Letter5" type="TextureRect" parent="GridContainer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 501.0
-margin_right = 576.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 448.0
+margin_right = 530.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter5" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "t"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button6" type="Button" parent="GridContainer" index="5"]
+[node name="Letter6" type="TextureRect" parent="GridContainer" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 626.0
-margin_right = 701.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 560.0
+margin_right = 642.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter6" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "y"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button7" type="Button" parent="GridContainer" index="6"]
+[node name="Letter7" type="TextureRect" parent="GridContainer" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 751.0
-margin_right = 827.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 672.0
+margin_right = 754.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter7" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "u"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button8" type="Button" parent="GridContainer" index="7"]
+[node name="Letter8" type="TextureRect" parent="GridContainer" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 877.0
-margin_right = 952.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 784.0
+margin_right = 866.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter8" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "i"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button9" type="Button" parent="GridContainer" index="8"]
+[node name="Letter9" type="TextureRect" parent="GridContainer" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1002.0
-margin_right = 1077.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 896.0
+margin_right = 978.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter9" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "o"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Button10" type="Button" parent="GridContainer" index="9"]
+[node name="Letter10" type="TextureRect" parent="GridContainer" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1127.0
-margin_right = 1202.0
-margin_bottom = 102.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 1008.0
+margin_right = 1090.0
+margin_bottom = 91.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter10" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "p"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button11" type="Button" parent="GridContainer" index="10"]
+[node name="Letter11" type="TextureRect" parent="GridContainer" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 106.0
-margin_right = 75.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_top = 95.0
+margin_right = 82.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter11" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "a"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button12" type="Button" parent="GridContainer" index="11"]
+[node name="Letter12" type="TextureRect" parent="GridContainer" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_top = 106.0
-margin_right = 201.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 112.0
+margin_top = 95.0
+margin_right = 194.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter12" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "s"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button13" type="Button" parent="GridContainer" index="12"]
+[node name="Letter13" type="TextureRect" parent="GridContainer" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 251.0
-margin_top = 106.0
-margin_right = 326.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 224.0
+margin_top = 95.0
+margin_right = 306.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter13" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "d"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button14" type="Button" parent="GridContainer" index="13"]
+[node name="Letter14" type="TextureRect" parent="GridContainer" index="13"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 376.0
-margin_top = 106.0
-margin_right = 451.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 336.0
+margin_top = 95.0
+margin_right = 418.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter14" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "f"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button15" type="Button" parent="GridContainer" index="14"]
+[node name="Letter15" type="TextureRect" parent="GridContainer" index="14"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 501.0
-margin_top = 106.0
-margin_right = 576.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 448.0
+margin_top = 95.0
+margin_right = 530.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter15" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "g"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button16" type="Button" parent="GridContainer" index="15"]
+[node name="Letter16" type="TextureRect" parent="GridContainer" index="15"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 626.0
-margin_top = 106.0
-margin_right = 701.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 560.0
+margin_top = 95.0
+margin_right = 642.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter16" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = -10.0
+margin_right = 83.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "h"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button18" type="Button" parent="GridContainer" index="16"]
+[node name="Letter17" type="TextureRect" parent="GridContainer" index="16"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 751.0
-margin_top = 106.0
-margin_right = 827.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 672.0
+margin_top = 95.0
+margin_right = 754.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter17" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "j"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button19" type="Button" parent="GridContainer" index="17"]
+[node name="Letter18" type="TextureRect" parent="GridContainer" index="17"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 877.0
-margin_top = 106.0
-margin_right = 952.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 784.0
+margin_top = 95.0
+margin_right = 866.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter18" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "k"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button20" type="Button" parent="GridContainer" index="18"]
+[node name="Letter19" type="TextureRect" parent="GridContainer" index="18"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1002.0
-margin_top = 106.0
-margin_right = 1077.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 896.0
+margin_top = 95.0
+margin_right = 978.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter19" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "l"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button21" type="Button" parent="GridContainer" index="19"]
+[node name="Letter20" type="TextureRect" parent="GridContainer" index="19"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1127.0
-margin_top = 106.0
-margin_right = 1202.0
-margin_bottom = 208.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 1008.0
+margin_top = 95.0
+margin_right = 1090.0
+margin_bottom = 186.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter20" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = -11.0
+margin_right = 81.0
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "ñ"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button22" type="Button" parent="GridContainer" index="20"]
+[node name="Letter21" type="TextureRect" parent="GridContainer" index="20"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 212.0
-margin_right = 75.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_top = 190.0
+margin_right = 82.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter21" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "z"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button23" type="Button" parent="GridContainer" index="21"]
+[node name="Letter22" type="TextureRect" parent="GridContainer" index="21"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 125.0
-margin_top = 212.0
-margin_right = 201.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 112.0
+margin_top = 190.0
+margin_right = 194.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter22" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "x"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button24" type="Button" parent="GridContainer" index="22"]
+[node name="Letter23" type="TextureRect" parent="GridContainer" index="22"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 251.0
-margin_top = 212.0
-margin_right = 326.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 224.0
+margin_top = 190.0
+margin_right = 306.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter23" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "c"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button25" type="Button" parent="GridContainer" index="23"]
+[node name="Letter24" type="TextureRect" parent="GridContainer" index="23"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 376.0
-margin_top = 212.0
-margin_right = 451.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 336.0
+margin_top = 190.0
+margin_right = 418.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter24" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "v"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button26" type="Button" parent="GridContainer" index="24"]
+[node name="Letter25" type="TextureRect" parent="GridContainer" index="24"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 501.0
-margin_top = 212.0
-margin_right = 576.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 448.0
+margin_top = 190.0
+margin_right = 530.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter25" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "b"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button27" type="Button" parent="GridContainer" index="25"]
+[node name="Letter26" type="TextureRect" parent="GridContainer" index="25"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 626.0
-margin_top = 212.0
-margin_right = 701.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 560.0
+margin_top = 190.0
+margin_right = 642.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="GridContainer/Letter26" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -10.0
+margin_right = 82.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
 text = "n"
-flat = false
 align = 1
-_sections_unfolded = [ "custom_fonts" ]
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Button28" type="Button" parent="GridContainer" index="26"]
+[node name="Letter27" type="TextureRect" parent="GridContainer" index="26"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 751.0
-margin_top = 212.0
-margin_right = 827.0
-margin_bottom = 314.0
-rect_min_size = Vector2( 75, 102 )
+margin_left = 672.0
+margin_top = 190.0
+margin_right = 754.0
+margin_bottom = 281.0
 rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
+rect_clip_content = false
+mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 5 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "m"
-flat = false
-align = 1
-_sections_unfolded = [ "custom_fonts" ]
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9"]
+[node name="Label" type="Label" parent="GridContainer/Letter27" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1.0
+margin_top = -10.0
+margin_right = 81.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "m"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="10"]
 
 stream = null
 volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
@@ -1383,58 +1877,58 @@ bus = "Master"
 
 [connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
 
-[connection signal="pressed" from="GridContainer/Button" to="." method="_on_letter_pressed" binds= [ "q" ]]
+[connection signal="gui_input" from="GridContainer/Letter" to="." method="_on_Letter_gui_input" binds= [ "q" ]]
 
-[connection signal="pressed" from="GridContainer/Button2" to="." method="_on_letter_pressed" binds= [ "w" ]]
+[connection signal="gui_input" from="GridContainer/Letter2" to="." method="_on_Letter_gui_input" binds= [ "w" ]]
 
-[connection signal="pressed" from="GridContainer/Button3" to="." method="_on_letter_pressed" binds= [ "e" ]]
+[connection signal="gui_input" from="GridContainer/Letter3" to="." method="_on_Letter_gui_input" binds= [ "e" ]]
 
-[connection signal="pressed" from="GridContainer/Button4" to="." method="_on_letter_pressed" binds= [ "r" ]]
+[connection signal="gui_input" from="GridContainer/Letter4" to="." method="_on_Letter_gui_input" binds= [ "r" ]]
 
-[connection signal="pressed" from="GridContainer/Button5" to="." method="_on_letter_pressed" binds= [ "t" ]]
+[connection signal="gui_input" from="GridContainer/Letter5" to="." method="_on_Letter_gui_input" binds= [ "t" ]]
 
-[connection signal="pressed" from="GridContainer/Button6" to="." method="_on_letter_pressed" binds= [ "y" ]]
+[connection signal="gui_input" from="GridContainer/Letter6" to="." method="_on_Letter_gui_input" binds= [ "y" ]]
 
-[connection signal="pressed" from="GridContainer/Button7" to="." method="_on_letter_pressed" binds= [ "u" ]]
+[connection signal="gui_input" from="GridContainer/Letter7" to="." method="_on_Letter_gui_input" binds= [ "u" ]]
 
-[connection signal="pressed" from="GridContainer/Button8" to="." method="_on_letter_pressed" binds= [ "i" ]]
+[connection signal="gui_input" from="GridContainer/Letter8" to="." method="_on_Letter_gui_input" binds= [ "i" ]]
 
-[connection signal="pressed" from="GridContainer/Button9" to="." method="_on_letter_pressed" binds= [ "o" ]]
+[connection signal="gui_input" from="GridContainer/Letter9" to="." method="_on_Letter_gui_input" binds= [ "o" ]]
 
-[connection signal="pressed" from="GridContainer/Button10" to="." method="_on_letter_pressed" binds= [ "p" ]]
+[connection signal="gui_input" from="GridContainer/Letter10" to="." method="_on_Letter_gui_input" binds= [ "p" ]]
 
-[connection signal="pressed" from="GridContainer/Button11" to="." method="_on_letter_pressed" binds= [ "a" ]]
+[connection signal="gui_input" from="GridContainer/Letter11" to="." method="_on_Letter_gui_input" binds= [ "a" ]]
 
-[connection signal="pressed" from="GridContainer/Button12" to="." method="_on_letter_pressed" binds= [ "s" ]]
+[connection signal="gui_input" from="GridContainer/Letter12" to="." method="_on_Letter_gui_input" binds= [ "s" ]]
 
-[connection signal="pressed" from="GridContainer/Button13" to="." method="_on_letter_pressed" binds= [ "d" ]]
+[connection signal="gui_input" from="GridContainer/Letter13" to="." method="_on_Letter_gui_input" binds= [ "d" ]]
 
-[connection signal="pressed" from="GridContainer/Button14" to="." method="_on_letter_pressed" binds= [ "f" ]]
+[connection signal="gui_input" from="GridContainer/Letter14" to="." method="_on_Letter_gui_input" binds= [ "f" ]]
 
-[connection signal="pressed" from="GridContainer/Button15" to="." method="_on_letter_pressed" binds= [ "g" ]]
+[connection signal="gui_input" from="GridContainer/Letter15" to="." method="_on_Letter_gui_input" binds= [ "g" ]]
 
-[connection signal="pressed" from="GridContainer/Button16" to="." method="_on_letter_pressed" binds= [ "h" ]]
+[connection signal="gui_input" from="GridContainer/Letter16" to="." method="_on_Letter_gui_input" binds= [ "h" ]]
 
-[connection signal="pressed" from="GridContainer/Button18" to="." method="_on_letter_pressed" binds= [ "j" ]]
+[connection signal="gui_input" from="GridContainer/Letter17" to="." method="_on_Letter_gui_input" binds= [ "j" ]]
 
-[connection signal="pressed" from="GridContainer/Button19" to="." method="_on_letter_pressed" binds= [ "k" ]]
+[connection signal="gui_input" from="GridContainer/Letter18" to="." method="_on_Letter_gui_input" binds= [ "k" ]]
 
-[connection signal="pressed" from="GridContainer/Button20" to="." method="_on_letter_pressed" binds= [ "l" ]]
+[connection signal="gui_input" from="GridContainer/Letter19" to="." method="_on_Letter_gui_input" binds= [ "l" ]]
 
-[connection signal="pressed" from="GridContainer/Button21" to="." method="_on_letter_pressed" binds= [ "ñ" ]]
+[connection signal="gui_input" from="GridContainer/Letter20" to="." method="_on_Letter_gui_input" binds= [ "ñ" ]]
 
-[connection signal="pressed" from="GridContainer/Button22" to="." method="_on_letter_pressed" binds= [ "z" ]]
+[connection signal="gui_input" from="GridContainer/Letter21" to="." method="_on_Letter_gui_input" binds= [ "z" ]]
 
-[connection signal="pressed" from="GridContainer/Button23" to="." method="_on_letter_pressed" binds= [ "x" ]]
+[connection signal="gui_input" from="GridContainer/Letter22" to="." method="_on_Letter_gui_input" binds= [ "x" ]]
 
-[connection signal="pressed" from="GridContainer/Button24" to="." method="_on_letter_pressed" binds= [ "c" ]]
+[connection signal="gui_input" from="GridContainer/Letter23" to="." method="_on_Letter_gui_input" binds= [ "c" ]]
 
-[connection signal="pressed" from="GridContainer/Button25" to="." method="_on_letter_pressed" binds= [ "v" ]]
+[connection signal="gui_input" from="GridContainer/Letter24" to="." method="_on_Letter_gui_input" binds= [ "v" ]]
 
-[connection signal="pressed" from="GridContainer/Button26" to="." method="_on_letter_pressed" binds= [ "b" ]]
+[connection signal="gui_input" from="GridContainer/Letter25" to="." method="_on_Letter_gui_input" binds= [ "b" ]]
 
-[connection signal="pressed" from="GridContainer/Button27" to="." method="_on_letter_pressed" binds= [ "n" ]]
+[connection signal="gui_input" from="GridContainer/Letter26" to="." method="_on_Letter_gui_input" binds= [ "n" ]]
 
-[connection signal="pressed" from="GridContainer/Button28" to="." method="_on_letter_pressed" binds= [ "m" ]]
+[connection signal="gui_input" from="GridContainer/Letter27" to="." method="_on_Letter_gui_input" binds= [ "m" ]]
 
 
