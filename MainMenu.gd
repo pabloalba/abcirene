@@ -16,7 +16,7 @@ func _on_BtnPlay_pressed():
 
 
 func _on_btnOpciones_pressed():
-	get_tree().change_scene("res://Options.tscn")
+	get_tree().change_scene("res://Settings.tscn")
 
 
 func _on_btnPalabras_pressed():
