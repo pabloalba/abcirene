@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/img/keboard_button.png" type="Texture" id=6]
 [ext_resource path="res://font_escolar_80.tres" type="DynamicFont" id=7]
 
-[node name="Play" type="ColorRect" index="0"]
+[node name="Play" type="ColorRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1844,7 +1844,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 stream = null
 volume_db = 0.0
-pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
