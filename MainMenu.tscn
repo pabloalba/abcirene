@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/img/btn_frases.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/btn_opciones.png" type="Texture" id=5]
 
-[node name="MainMenu" type="ColorRect"]
+[node name="MainMenu" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -62,7 +62,7 @@ texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="btnPalabras" type="Button" parent="." index="2"]
+[node name="btnWords" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -88,7 +88,7 @@ flat = true
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="btnFrases" type="Button" parent="." index="3"]
+[node name="btnPhrases" type="Button" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -114,7 +114,7 @@ flat = true
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="btnOpciones" type="Button" parent="." index="4"]
+[node name="btnSettings" type="Button" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -140,10 +140,10 @@ flat = true
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[connection signal="pressed" from="btnPalabras" to="." method="_on_btnPalabras_pressed"]
+[connection signal="pressed" from="btnWords" to="." method="_on_btnWords_pressed"]
 
-[connection signal="pressed" from="btnFrases" to="." method="_on_btnFrases_pressed"]
+[connection signal="pressed" from="btnPhrases" to="." method="_on_btnPhrases_pressed"]
 
-[connection signal="pressed" from="btnOpciones" to="." method="_on_btnOpciones_pressed"]
+[connection signal="pressed" from="btnSettings" to="." method="_on_btnSettings_pressed"]
 
 

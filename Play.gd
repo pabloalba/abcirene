@@ -62,7 +62,7 @@ func restart_game():
 	
 	current_words = select_words()
 	
-	if globals.all_alphabet:
+	if globals.settings["words"]["all_alphabet"]:
 		addValidLetters(alphabet)
 	else:
 		words_letters = []
@@ -97,34 +97,34 @@ func generate_words():
 	
 func choose_valid_words():
 	var w = []
-	if globals.words_mslcp_enabled:
+	if globals.settings["words"]["words_mslcp_enabled"]:
 		w += words_mslcp
-	if globals.words_tjzr_enabled:
+	if globals.settings["words"]["words_tjzr_enabled"]:
 		w += words_tjzr
-	if globals.words_nbvfh_enabled:
+	if globals.settings["words"]["words_nbvfh_enabled"]:
 		w += words_nbvfh
-	if globals.words_dgllchr_enabled:
+	if globals.settings["words"]["words_dgllchr_enabled"]:
 		w += words_dgllchr
-	if globals.words_nyx_enabled:
+	if globals.settings["words"]["words_nyx_enabled"]:
 		w += words_nyx
-	if globals.words_quceci_enabled:
+	if globals.settings["words"]["words_quceci_enabled"]:
 		w += words_quceci
-	if globals.words_pluri_enabled:
+	if globals.settings["words"]["words_pluri_enabled"]:
 		w += words_pluri
-	if globals.words_mixed_enabled:
+	if globals.settings["words"]["words_mixed_enabled"]:
 		w += words_mixed
-	if globals.words_inverse_enabled:
+	if globals.settings["words"]["words_inverse_enabled"]:
 		w += words_inverse
-	if globals.words_locked_enabled:
+	if globals.settings["words"]["words_locked_enabled"]:
 		w += words_locked
-	if globals.words_complex_enabled:
+	if globals.settings["words"]["words_complex_enabled"]:
 		w += words_complex
 		
 	return w
 	
 func select_words():			
 	var w = []
-	for i in range(globals.num_words):
+	for i in range(globals.settings["words"]["num_words"]):
 		w.append(shuffled_words[word_index])
 		word_index = (word_index + 1) % len(shuffled_words)
 	return w
@@ -171,7 +171,7 @@ func create_word(num, total, word):
 	var texture = load("res://assets/img/words/"+safe_name+".png")
 	image.set_texture(texture)
 	
-	if globals.see_words:
+	if globals.settings["words"]["see_words"]:
 		label.show()
 	else:
 		label.hide()
@@ -316,5 +316,5 @@ func _on_Letter_gui_input(ev, l):
 	if ev is InputEventMouseButton:
 		if ev.button_index == BUTTON_LEFT:
 			if ev.pressed:
-				if globals.all_alphabet or l in words_letters:
+				if globals.settings["words"]["all_alphabet"] or l in words_letters:
 					_on_letter_pressed(l)

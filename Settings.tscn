@@ -246,7 +246,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 142.0
+margin_right = 199.0
 margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -256,7 +256,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.329412, 0.776471, 0.921569, 1 )
-text = "Estadisticas"
+text = "Estadísticas"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -419,7 +419,7 @@ margin_bottom = 110.0
 hint_tooltip = "Ver [b]todas[/b] las letras en el teclado"
 _sections_unfolded = [ "Hint" ]
 
-[node name="CtrlWordsShowText" parent="PalabrasContainer" index="7" instance=ExtResource( 8 )]
+[node name="CtrlWordsSeeWords" parent="PalabrasContainer" index="7" instance=ExtResource( 8 )]
 
 margin_top = 105.0
 margin_bottom = 145.0
@@ -435,14 +435,14 @@ margin_bottom = 145.0
 hint_tooltip = "Ver todo en mayúsculas"
 _sections_unfolded = [ "Hint" ]
 
-[node name="CtrlWordsOneWord" parent="PalabrasContainer" index="9" instance=ExtResource( 8 )]
+[node name="CtrlWordsNumWords1" parent="PalabrasContainer" index="9" instance=ExtResource( 8 )]
 
 margin_top = 200.0
 margin_bottom = 240.0
 hint_tooltip = "Una palabra"
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsTwoWords" parent="PalabrasContainer" index="10" instance=ExtResource( 8 )]
+[node name="CtrlWordsNumWords2" parent="PalabrasContainer" index="10" instance=ExtResource( 8 )]
 
 margin_left = 410.0
 margin_top = 200.0
@@ -451,7 +451,7 @@ margin_bottom = 240.0
 hint_tooltip = "Dos palabras"
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsThreeWords" parent="PalabrasContainer" index="11" instance=ExtResource( 8 )]
+[node name="CtrlWordsNumWords3" parent="PalabrasContainer" index="11" instance=ExtResource( 8 )]
 
 margin_left = 745.0
 margin_top = 200.0
@@ -460,14 +460,14 @@ margin_bottom = 240.0
 hint_tooltip = "Tres palabras"
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsFourWords" parent="PalabrasContainer" index="12" instance=ExtResource( 8 )]
+[node name="CtrlWordsNumWords4" parent="PalabrasContainer" index="12" instance=ExtResource( 8 )]
 
 margin_top = 240.0
 margin_bottom = 280.0
 hint_tooltip = "Cuatro palabras"
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsSixWords" parent="PalabrasContainer" index="13" instance=ExtResource( 8 )]
+[node name="CtrlWordsNumWords6" parent="PalabrasContainer" index="13" instance=ExtResource( 8 )]
 
 margin_left = 410.0
 margin_top = 240.0
@@ -551,7 +551,7 @@ margin_bottom = 450.0
 hint_tooltip = "Sílabas inversas"
 _sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupTra" parent="PalabrasContainer" index="23" instance=ExtResource( 8 )]
+[node name="CtrlWordsGroupLocked" parent="PalabrasContainer" index="23" instance=ExtResource( 8 )]
 
 margin_top = 450.0
 margin_bottom = 490.0
@@ -585,7 +585,6 @@ _sections_unfolded = [ "Hint", "Rect" ]
 
 [node name="FrasesContainer" type="ColorRect" parent="." index="9"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -694,7 +693,7 @@ margin_bottom = 110.0
 hint_tooltip = "Ver [b]todas[/b] las letras en el teclado"
 _sections_unfolded = [ "Hint" ]
 
-[node name="CtrlPhrasesShowText" parent="FrasesContainer" index="5" instance=ExtResource( 8 )]
+[node name="CtrlPhrasesSeePhrases" parent="FrasesContainer" index="5" instance=ExtResource( 8 )]
 
 margin_top = 105.0
 margin_bottom = 145.0
@@ -1889,6 +1888,10 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 [connection signal="gui_input" from="Frases" to="." method="_on_Frases_gui_input"]
 
 [connection signal="gui_input" from="Estadisticas" to="." method="_on_Estadisticas_gui_input"]
+
+[connection signal="pressed" from="PalabrasContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+
+[connection signal="pressed" from="FrasesContainer/SaveButton2" to="." method="_on_SaveButton_pressed"]
 
 
 [editable path="FrasesContainer/CtrlPhrasesLocution"]
