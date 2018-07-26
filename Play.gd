@@ -36,7 +36,9 @@ var current_words
 var words_letters = []
 
 func _ready():	
-	randomize() 
+	randomize()
+	globals.caps = globals.settings["words"]["caps"]
+	upper_control()
 	spaces = []
 	current_letter = get_node("SelectedLetter")
 	word_containers.append(get_node("Word1"))	
@@ -50,7 +52,13 @@ func _ready():
 	generate_words()
 	restart_game()
 	
-	
+func upper_control():
+	for node in get_node("GridContainer").get_children():
+		node.get_node("Label").uppercase = globals.caps
+		if globals.caps:
+			node.get_node("Label").set_position(Vector2(0,5))
+		else:	
+			node.get_node("Label").set_position(Vector2(0,-10))
 func restart_game():
 	
 	for space in spaces:
@@ -165,6 +173,7 @@ func create_word(num, total, word):
 	var label = container.get_node("VBoxContainer/pictures/lbl")
 	var image = container.get_node("VBoxContainer/pictures/img")
 	
+	label.uppercase = globals.caps
 	label.set_text(word)
 	var safe_name = safe_word(word)
 	

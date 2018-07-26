@@ -1,5 +1,6 @@
 extends Node
 const version = "2.0.0"
+var caps = false
 
 # Default settings
 var settings = {

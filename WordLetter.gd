@@ -31,6 +31,7 @@ func set_letter(l):
 func mark_as_correct():
 	set_texture(text_correct)
 	#get_node("ColorRect").color = Color(0, 1, 0, 1)
+	get_node("Label").uppercase = globals.caps
 	get_node("Label").set_text(letter)
 	
 func mark_as_incorrect():

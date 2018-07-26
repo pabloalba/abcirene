@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/img/keboard_button.png" type="Texture" id=6]
 [ext_resource path="res://font_escolar_80.tres" type="DynamicFont" id=7]
 
-[node name="Play" type="ColorRect"]
+[node name="Play" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -27,6 +27,8 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Word1" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Word1" index="0"]
 
@@ -123,6 +125,8 @@ _sections_unfolded = [ "Rect", "custom_constants" ]
 
 [node name="Word2" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Word2" index="0"]
 
 anchor_left = 0.0
@@ -217,6 +221,8 @@ alignment = 1
 _sections_unfolded = [ "Rect" ]
 
 [node name="Word3" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Word3" index="0"]
 
@@ -313,6 +319,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Word4" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Word4" index="0"]
 
 anchor_left = 0.0
@@ -408,6 +416,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Word5" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Word5" index="0"]
 
 anchor_left = 0.0
@@ -502,6 +512,8 @@ alignment = 1
 _sections_unfolded = [ "Rect" ]
 
 [node name="Word6" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Word6" index="0"]
 
