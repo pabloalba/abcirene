@@ -15,7 +15,7 @@ var words_mixed = ["sol", "pez", "luz", "mar", "sal", "dos", "azul", "pan", "mel
 var words_inverse = ["espejo", "espada", "isla", "arma", "alto", "astuto", "ancho", "espina", "escudo", "asco", "antes", "indio"]
 var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase", "bruja", "tripa", "fresa", "grúa", "brazo", "fruta", "sobre", "tigre", "sopla", "dobla", "abre", "otro"]
 var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta", "cresta", "frente", "presta"]
-
+var phrases = ["mira la foto de mi perro", "dame zumo de uva", "mi mono me mola", "dame la mano"]
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -37,7 +37,15 @@ var words_letters = []
 
 func _ready():	
 	randomize()
-	globals.caps = globals.settings["words"]["caps"]
+	if globals.play_word:
+		globals.caps = globals.settings["words"]["caps"]
+		globals.all_alphabet = globals.settings["words"]["all_alphabet"]
+		globals.see_words = globals.settings["words"]["see_words"]
+	else:
+		globals.caps = globals.settings["phrases"]["caps"]
+		globals.all_alphabet = globals.settings["phrases"]["all_alphabet"]
+		globals.see_words = globals.settings["phrases"]["see_phrases"]
+		
 	upper_control()
 	spaces = []
 	current_letter = get_node("SelectedLetter")
@@ -47,6 +55,7 @@ func _ready():
 	word_containers.append(get_node("Word4"))
 	word_containers.append(get_node("Word5"))
 	word_containers.append(get_node("Word6"))
+	word_containers.append(get_node("Phrase"))
 	drag = false
 	mode = MODE_PLAYER
 	generate_words()
@@ -59,8 +68,8 @@ func upper_control():
 			node.get_node("Label").set_position(Vector2(0,5))
 		else:	
 			node.get_node("Label").set_position(Vector2(0,-10))
+			
 func restart_game():
-	
 	for space in spaces:
 		if space != null:
 			var parent = space.get_parent ()
@@ -68,9 +77,13 @@ func restart_game():
 			space.queue_free()
 	spaces = []
 	
+	if not globals.play_word:
+		for node in get_node("Phrase/VBoxContainer/letters").get_children():
+			get_node("Phrase/VBoxContainer/letters").remove_child(node)
+	
 	current_words = select_words()
 	
-	if globals.settings["words"]["all_alphabet"]:
+	if globals.all_alphabet:
 		addValidLetters(alphabet)
 	else:
 		words_letters = []
@@ -92,9 +105,12 @@ func restart_game():
 				words_letters.append(l)
 		addValidLetters(words_letters)
 		
-	for i in range(len(current_words)):
-		create_word(i,len(current_words),current_words[i])
-	
+	if globals.play_word:	
+		for i in range(len(current_words)):
+			create_word(i,len(current_words),current_words[i])
+	else:
+		create_word(6, len(current_words), current_words[0])
+		
 	current_space_num = 0
 	spaces[current_space_num].mark_as_current()
 
@@ -105,28 +121,31 @@ func generate_words():
 	
 func choose_valid_words():
 	var w = []
-	if globals.settings["words"]["words_mslcp_enabled"]:
-		w += words_mslcp
-	if globals.settings["words"]["words_tjzr_enabled"]:
-		w += words_tjzr
-	if globals.settings["words"]["words_nbvfh_enabled"]:
-		w += words_nbvfh
-	if globals.settings["words"]["words_dgllchr_enabled"]:
-		w += words_dgllchr
-	if globals.settings["words"]["words_nyx_enabled"]:
-		w += words_nyx
-	if globals.settings["words"]["words_quceci_enabled"]:
-		w += words_quceci
-	if globals.settings["words"]["words_pluri_enabled"]:
-		w += words_pluri
-	if globals.settings["words"]["words_mixed_enabled"]:
-		w += words_mixed
-	if globals.settings["words"]["words_inverse_enabled"]:
-		w += words_inverse
-	if globals.settings["words"]["words_locked_enabled"]:
-		w += words_locked
-	if globals.settings["words"]["words_complex_enabled"]:
-		w += words_complex
+	if globals.play_word:
+		if globals.settings["words"]["words_mslcp_enabled"]:
+			w += words_mslcp
+		if globals.settings["words"]["words_tjzr_enabled"]:
+			w += words_tjzr
+		if globals.settings["words"]["words_nbvfh_enabled"]:
+			w += words_nbvfh
+		if globals.settings["words"]["words_dgllchr_enabled"]:
+			w += words_dgllchr
+		if globals.settings["words"]["words_nyx_enabled"]:
+			w += words_nyx
+		if globals.settings["words"]["words_quceci_enabled"]:
+			w += words_quceci
+		if globals.settings["words"]["words_pluri_enabled"]:
+			w += words_pluri
+		if globals.settings["words"]["words_mixed_enabled"]:
+			w += words_mixed
+		if globals.settings["words"]["words_inverse_enabled"]:
+			w += words_inverse
+		if globals.settings["words"]["words_locked_enabled"]:
+			w += words_locked
+		if globals.settings["words"]["words_complex_enabled"]:
+			w += words_complex
+	else:
+		w += phrases
 		
 	return w
 	
@@ -165,31 +184,45 @@ func safe_word(word):
 	safe_name = safe_name.replace("ó","o")
 	safe_name = safe_name.replace("ú","u")
 	safe_name = safe_name.replace("ñ","n")
+	safe_name = safe_name.replace(" ","_")
 	return safe_name
 
 	
 func create_word(num, total, word):
-	var container = word_containers[num]
-	var label = container.get_node("VBoxContainer/pictures/lbl")
-	var image = container.get_node("VBoxContainer/pictures/img")
-	
-	label.uppercase = globals.caps
-	label.set_text(word)
 	var safe_name = safe_word(word)
-	
-	var texture = load("res://assets/img/words/"+safe_name+".png")
+	var container = word_containers[num]
+	var image
+	var texture
+	var label
+	if globals.play_word:
+		image = container.get_node("VBoxContainer/pictures/img") 
+		texture = load("res://assets/img/words/"+safe_name+".png")
+		label = container.get_node("VBoxContainer/pictures/lbl")
+	else:
+		image = container.get_node("VBoxContainer/img")
+		texture = load("res://assets/img/phrases/"+safe_name+".png")
+		total = -1
+		label = container.get_node("VBoxContainer/lbl")
+		
 	image.set_texture(texture)
 	
-	if globals.settings["words"]["see_words"]:
+	if globals.see_words:
+		label.uppercase = globals.caps
+		label.set_text(word)
 		label.show()
 	else:
 		label.hide()
 		
 	for i in range(len(word)):
-		var space = load("res://WordLetter.tscn").instance()
-		space.set_letter(word[i])
-		container.get_node("VBoxContainer/letters").add_child(space)
-		spaces.append(space)
+		if word[i] == ' ':
+			var l = Label.new()
+			l.set_text("          ")
+			container.get_node("VBoxContainer/letters").add_child(l)
+		else:
+			var space = load("res://WordLetter.tscn").instance()
+			space.set_letter(word[i])
+			container.get_node("VBoxContainer/letters").add_child(space)
+			spaces.append(space)
 		
 	spaces.append(null)
 		
@@ -251,7 +284,15 @@ func create_word(num, total, word):
 		elif num == 5:
 			container.position.x = 840
 			container.position.y = 230	
+	if total == -1: # Phrase
+		container.set_scale(Vector2(0.55, 0.55))
+		container.position.x = 0
+		if globals.see_words:
+			container.position.y = 60
+		else:
+			container.position.y = 110
 	container.show()
+	
 	
 func shuffle_list(list):
 	var shuffled_list = []

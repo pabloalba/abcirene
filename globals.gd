@@ -1,6 +1,9 @@
 extends Node
 const version = "2.0.0"
 var caps = false
+var all_alphabet = false
+var play_word = true
+var see_words = false
 
 # Default settings
 var settings = {
