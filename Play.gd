@@ -3,7 +3,6 @@ extends ColorRect
 const MODE_PLAYER = 0
 const MODE_ANIM = 1
 const MODE_SUCCESS = 2
-
 var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "pisa", "pie", "púa", "mío", "cose"]
 var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
 var words_nbvfh = ["vaso", "vaca", "bota", "boca", "foca", "feo", "fila", "café", "vino", "pino", "nata", "rana", "sofá", "camino", "luna", "lana", "piano", "vela", "fuma", "oveja", "abeja", "humo", "búho", "hoja", "hielo", "cohete"]
@@ -33,6 +32,7 @@ var word_index = 0
 var shuffled_words = []
 var current_space_num = 0
 var current_words
+var current_word_num
 var words_letters = []
 
 func _ready():	
@@ -77,11 +77,12 @@ func restart_game():
 			space.queue_free()
 	spaces = []
 	
-	if not globals.play_word:
-		for node in get_node("Phrase/VBoxContainer/letters").get_children():
+	for lc in ["Word1", "Word2", "Word3", "Word4", "Word5", "Word6", "Phrase"]:
+		for node in get_node(lc + "/VBoxContainer/letters").get_children():
 			get_node("Phrase/VBoxContainer/letters").remove_child(node)
 	
 	current_words = select_words()
+	current_word_num = 0
 	
 	if globals.all_alphabet:
 		addValidLetters(alphabet)
@@ -229,61 +230,77 @@ func create_word(num, total, word):
 		
 	if total == 1:
 		container.set_scale(Vector2(0.8, 0.8))
-		container.position.x = 410
+		container.position.x = 0
 		container.position.y = 60
+		container.get_node("VBoxContainer").rect_size.x = 1280 / 0.8
 	if total == 2:
-		container.set_scale(Vector2(0.7, 0.7))
+		container.set_scale(Vector2(0.57, 0.57))
 		if num == 0:
-			container.position.x = 100
+			container.position.x = 0
 			container.position.y = 60
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.57
 		else:
-			container.position.x = 700
+			container.position.x = 640
 			container.position.y = 60
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.57
 	if total == 3:
-		container.set_scale(Vector2(0.45, 0.45))
+		container.set_scale(Vector2(0.4, 0.4))
 		if num == 0:
-			container.position.x = 110
+			container.position.x = 0
 			container.position.y = 115
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.4 + 50
 		elif num == 1:
-			container.position.x = 475
+			container.position.x = 450
 			container.position.y = 115
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.4 + 50
 		else:
-			container.position.x = 840
+			container.position.x = 852
 			container.position.y = 115
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.4 + 50
 	if total == 4:
 		container.set_scale(Vector2(0.4, 0.4))
 		if num == 0:
-			container.position.x = 110
+			container.position.x = 0
 			container.position.y = 70
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.4 + 100
 		elif num == 1:
-			container.position.x = 645
+			container.position.x = 640
 			container.position.y = 70
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.4 + 100
 		elif num == 2:
-			container.position.x = 110
+			container.position.x = 0
 			container.position.y = 230
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.4 + 100
 		else:
-			container.position.x = 645
+			container.position.x = 640
 			container.position.y = 230
+			container.get_node("VBoxContainer").rect_size.x = 640 / 0.4 + 100
 	if total == 6:
 		container.set_scale(Vector2(0.35, 0.35))
 		if num == 0:
-			container.position.x = 110
-			container.position.y = 70
+			container.position.x = 0
+			container.position.y = 80
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 1:
-			container.position.x = 475
-			container.position.y = 70
+			container.position.x = 450
+			container.position.y = 80
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 2:
-			container.position.x = 840
-			container.position.y = 70
+			container.position.x = 852
+			container.position.y = 80
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 3:
-			container.position.x = 110
+			container.position.x = 0
 			container.position.y = 230
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 4:
-			container.position.x = 475
+			container.position.x = 450
 			container.position.y = 230
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 5:
-			container.position.x = 840
+			container.position.x = 852
 			container.position.y = 230	
+			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 	if total == -1: # Phrase
 		container.set_scale(Vector2(0.55, 0.55))
 		container.position.x = 0
@@ -330,8 +347,27 @@ func _on_letter_pressed(l):
 		else:
 			mode = MODE_ANIM
 			spaces[current_space_num].mark_as_incorrect()
+			save_statistics(spaces[current_space_num].simple_letter)
 			failsafe = 1
-			
+
+func save_statistics(letter):
+	var current = 0
+	if globals.settings["statistics"]["letters"].has(letter):
+		current = globals.settings["statistics"]["letters"][letter]
+	globals.settings["statistics"]["letters"][letter] = current + 1
+	
+	var word = current_words[current_word_num]
+	current = 0
+	if globals.play_word:
+		if globals.settings["statistics"]["words"].has(word):
+				current = globals.settings["statistics"]["words"][word]
+		globals.settings["statistics"]["words"][word] = current + 1
+	else:
+		if globals.settings["statistics"]["phrases"].has(word):
+				current = globals.settings["statistics"]["phrases"][word]
+		globals.settings["statistics"]["phrases"][word] = current + 1
+	
+	globals.save_game()	
 		
 func start_success():
 	mode = MODE_SUCCESS	
@@ -349,6 +385,7 @@ func end_success():
 	current_space_num += 1
 	if current_space_num < len(spaces):
 		spaces[current_space_num].mark_as_current()
+		current_word_num += 1
 	mode = MODE_PLAYER
 
 

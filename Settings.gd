@@ -1,5 +1,11 @@
 extends ColorRect
 
+class StatisticsSorter:
+	static func sort(a,b):
+		if a[1] > b[1]:
+			return true
+		return false
+
 
 func _ready():
 	var group = [get_node("PalabrasContainer/CtrlWordsOnlyLetters"), get_node("PalabrasContainer/CtrlWordsAllLetters")]
@@ -15,6 +21,7 @@ func _ready():
 		item.set_group(group)
 		
 	load_old_settings()
+	load_statistics()
 
 func load_old_settings():
 	if globals.settings["words"]["all_alphabet"]:
@@ -134,8 +141,8 @@ func save_settings():
 		globals.settings["words"]["num_words"] = 3
 	elif get_node("PalabrasContainer/CtrlWordsNumWords4").current_state:
 		globals.settings["words"]["num_words"] = 4
-	elif get_node("PalabrasContainer/CtrlWordsNumWords5").current_state:
-		globals.settings["words"]["num_words"] = 5
+	elif get_node("PalabrasContainer/CtrlWordsNumWords6").current_state:
+		globals.settings["words"]["num_words"] = 6
 		
 	globals.settings["words"]["words_mslcp_enabled"] = get_node("PalabrasContainer/CtrlWordsGroupMLSCP").current_state
 	globals.settings["words"]["words_tjzr_enabled"] = get_node("PalabrasContainer/CtrlWordsGroupTJZR").current_state
@@ -163,7 +170,38 @@ func save_settings():
 	globals.settings["phrases"]["sound_win"] = get_node("FrasesContainer/CtrlPhrasesSoundWin").current_state
 		
 	
-
+func load_statistics():
+	# letters
+	var letters = []
+	for key in globals.settings["statistics"]["letters"].keys():
+		letters.append([key, globals.settings["statistics"]["letters"][key]])
+		
+	letters.sort_custom(StatisticsSorter, "sort")
+	
+	# words
+	var words = []
+	for key in globals.settings["statistics"]["words"].keys():
+		words.append([key, globals.settings["statistics"]["words"][key]])
+		
+	words.sort_custom(StatisticsSorter, "sort")
+	
+	# phrases
+	var phrases = []
+	for key in globals.settings["statistics"]["phrases"].keys():
+		phrases.append([key, globals.settings["statistics"]["phrases"][key]])
+		
+	phrases.sort_custom(StatisticsSorter, "sort")
+	
+	
+	
+	var i
+	for i in range(10):
+		if len(letters) > i: 
+			get_node("EstadisticasContainer/LblLetter"+str(i+1)).set_text(letters[i][0] + " ("+str(letters[i][1]) + ")")
+		if len(words) > i: 
+			get_node("EstadisticasContainer/LblWord"+str(i+1)).set_text(words[i][0] + " ("+str(words[i][1]) + ")")
+		if len(phrases) > i: 
+			get_node("EstadisticasContainer/LblPhrase"+str(i+1)).set_text(phrases[i][0] + " ("+str(phrases[i][1]) + ")")
 
 func _on_SaveButton_pressed():
 	save_settings()

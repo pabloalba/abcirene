@@ -35,10 +35,11 @@ var settings = {
 		"sound_win": true
 	},
 	"statistics" : {
+		"letters": {},
+		"words": {},
+		"phrases": {}
 	}
 }
-	
-
 
 
 func save_game():
