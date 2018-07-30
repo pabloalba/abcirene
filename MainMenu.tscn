@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/img/btn_frases.png" type="Texture" id=4]
 [ext_resource path="res://assets/img/btn_opciones.png" type="Texture" id=5]
 
-[node name="MainMenu" type="ColorRect"]
+[node name="MainMenu" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0

@@ -28,7 +28,6 @@ var drag = false
 var mode = MODE_PLAYER
 var letter_pos = Vector2()
 var failsafe
-var current_letter
 var speed = 500
 var word_containers = []
 var spaces = []
@@ -59,7 +58,6 @@ func _ready():
 		
 	upper_control()
 	spaces = []
-	current_letter = get_node("SelectedLetter")
 	word_containers.append(get_node("Word1"))	
 	word_containers.append(get_node("Word2"))
 	word_containers.append(get_node("Word3"))
