@@ -5,6 +5,8 @@ var all_alphabet = false
 var play_word = true
 var see_words = false
 var num_words = 1
+var locution = true
+var sound_win = true
 
 # Default settings
 var settings = {

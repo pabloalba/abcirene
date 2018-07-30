@@ -3,19 +3,23 @@ extends ColorRect
 const MODE_PLAYER = 0
 const MODE_ANIM = 1
 const MODE_SUCCESS = 2
-var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "pisa", "pie", "púa", "mío", "cose"]
+# "pie", "pisa", 
+var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "púa", "mío", "cose"]
 var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
 var words_nbvfh = ["vaso", "vaca", "bota", "boca", "foca", "feo", "fila", "café", "vino", "pino", "nata", "rana", "sofá", "camino", "luna", "lana", "piano", "vela", "fuma", "oveja", "abeja", "humo", "búho", "hoja", "hielo", "cohete"]
-var words_dgllchr = ["nido", "llave", "valla", "gato", "goma", "gusano", "caballo", "cara", "pirata", "llora", "tira", "mago", "dedo", "dado", "codo", "gallina", "coche", "leche", "chino", "chupete", "ocho", "oro", "ducha", "moda", "paga", "hora", "médico", "madera"]
+# "hora", 
+var words_dgllchr = ["nido", "llave", "valla", "gato", "goma", "gusano", "caballo", "cara", "pirata", "llora", "tira", "mago", "dedo", "dado", "codo", "gallina", "coche", "leche", "chino", "chupete", "ocho", "oro", "ducha", "moda", "paga", "médico", "madera"]
 var words_nyx = ["piña", "caña", "niña", "rayo", "payaso", "taxi", "boxeo", "baño", "yema", "cabaña", "araña"]
 var words_quceci = ["queso", "quema", "raqueta", "quita", "pequeño", "máquina", "cine", "cena", "cereza", "cero", "maceta", "cielo"]
 var words_pluri = ["caramelo", "mariposa", "gasolina", "palomitas", "bocadillo", "amapola", "lavadora", "mecánico", "marinero"]
 var words_mixed = ["sol", "pez", "luz", "mar", "sal", "dos", "azul", "pan", "melón", "papel", "lápiz", "comer", "manos", "salta", "corta", "barco", "canta", "pistola", "mosca", "soldado", "montaña", "castillo", "martillo", "circo", "pantalón", "banco", "calza", "multa", "perdido"]
 var words_inverse = ["espejo", "espada", "isla", "arma", "alto", "astuto", "ancho", "espina", "escudo", "asco", "antes", "indio"]
 var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase", "bruja", "tripa", "fresa", "grúa", "brazo", "fruta", "sobre", "tigre", "sopla", "dobla", "abre", "otro"]
-var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta", "cresta", "frente", "presta"]
+# "cresta", "frente", "presta"
+var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta"]
 var phrases = [ "casi la pilla", "dame la mano", "dame zumo de uva", "me como la sopa yo solo", "me duele la mano", "mi mono me mola", "mira esa vaca rosa", "no me da la gana", "no veo nada", "pásame el pan", "se ha ido mi loro", "toma el tomate", "tócame la cabeza", "¿me la pelas?", "échame leche","mira la foto de mi perro"]
 var letters_font = load("res://font_escolar_112.tres")
+var aplause = load("res://assets/audio/aplause.wav") 
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -43,11 +47,15 @@ func _ready():
 		globals.all_alphabet = globals.settings["words"]["all_alphabet"]
 		globals.see_words = globals.settings["words"]["see_words"]
 		globals.num_words = globals.settings["words"]["num_words"]
+		globals.locution = globals.settings["words"]["locution"]
+		globals.sound_win = globals.settings["words"]["sound_win"]
 	else:
 		globals.caps = globals.settings["phrases"]["caps"]
 		globals.all_alphabet = globals.settings["phrases"]["all_alphabet"]
 		globals.see_words = globals.settings["phrases"]["see_phrases"]
 		globals.num_words = 1
+		globals.locution = globals.settings["phrases"]["locution"]
+		globals.sound_win = globals.settings["phrases"]["sound_win"]
 		
 	upper_control()
 	spaces = []
@@ -162,9 +170,6 @@ func select_words():
 	for i in range(globals.num_words):
 		w.append(shuffled_words[word_index])
 		word_index = (word_index + 1) % len(shuffled_words)
-	print(len(shuffled_words))
-	print(word_index)
-	print (w)
 	return w
 		
 func addValidLetters(letters):	
@@ -388,6 +393,12 @@ func save_statistics(letter):
 	globals.save_game()	
 		
 func start_success():
+	var safe_name = safe_word(current_words[current_word_num])
+	if globals.locution:
+		_play_word(safe_name, globals.sound_win)
+	elif globals.sound_win:
+		play_aplause(null)
+		
 	mode = MODE_SUCCESS	
 	failsafe = 1
 	var i = current_space_num -1
@@ -407,14 +418,27 @@ func end_success():
 	mode = MODE_PLAYER
 
 
+func _play_word(safe_name, play_aplause):	
+	var music_player = get_node("AudioStreamPlayer")
+	var sfx = load("res://assets/audio/" + safe_name + ".wav") 
+	music_player.stream = sfx
+	music_player.play()
+	if play_aplause:
+		music_player.connect("finished", self, "play_aplause", [music_player])
+
+func play_aplause(who):
+	get_node("AudioStreamPlayer").disconnect("finished", self, "play_aplause")
+	get_node("AudioStreamPlayer").stream = aplause
+	get_node("AudioStreamPlayer").play()
+		
+
 func _on_img_gui_input( ev, num ):
 	if ev is InputEventMouseButton:
 		if ev.button_index == BUTTON_LEFT:
 			if ev.pressed:
-				var safe_name = safe_word(current_words[num-1])		
-				var sfx = load("res://assets/audio/" + safe_name + ".wav") 
-				get_node("AudioStreamPlayer").stream = sfx
-				get_node("AudioStreamPlayer").play()
+				var safe_name = safe_word(current_words[num-1])
+				_play_word(safe_name, false)
+				
 
 
 func _on_Letter_gui_input(ev, l):
