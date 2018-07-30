@@ -397,7 +397,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Sonidos"
+text = "Sonidos al acabar una palabra"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -571,7 +571,7 @@ _sections_unfolded = [ "Hint", "Rect" ]
 
 margin_top = 535.0
 margin_bottom = 575.0
-hint_tooltip = "Locución de las palabras"
+hint_tooltip = "Locución"
 _sections_unfolded = [ "Hint", "Rect" ]
 
 [node name="CtrlWordsSoundWin" parent="PalabrasContainer" index="26" instance=ExtResource( 8 )]
@@ -580,7 +580,7 @@ margin_left = 410.0
 margin_top = 535.0
 margin_right = 450.0
 margin_bottom = 575.0
-hint_tooltip = "Sonido al terminar la palabra"
+hint_tooltip = "Aplausos"
 _sections_unfolded = [ "Hint", "Rect" ]
 
 [node name="FrasesContainer" type="ColorRect" parent="." index="9"]
@@ -671,7 +671,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Sonidos"
+text = "Sonidos al acabar una frase"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -713,14 +713,13 @@ _sections_unfolded = [ "Hint" ]
 
 margin_top = 195.0
 margin_bottom = 235.0
-hint_tooltip = "Locución de frase"
+hint_tooltip = "Locución"
 _sections_unfolded = [ "Hint" ]
 
 [node name="RichTextLabel" parent="FrasesContainer/CtrlPhrasesLocution/TextureRect" index="0"]
 
 bbcode_text = "Locucuión de palbras"
 meta_underlined = false
-text = "Locucuión de palbras"
 
 [node name="CtrlPhrasesSoundWin" parent="FrasesContainer" index="8" instance=ExtResource( 8 )]
 
@@ -728,7 +727,7 @@ margin_left = 495.0
 margin_top = 195.0
 margin_right = 535.0
 margin_bottom = 235.0
-hint_tooltip = "Sonido al terminar la frase"
+hint_tooltip = "Aplausos"
 _sections_unfolded = [ "Hint" ]
 
 [node name="EstadisticasContainer" type="ColorRect" parent="." index="10"]

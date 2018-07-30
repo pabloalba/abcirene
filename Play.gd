@@ -14,7 +14,8 @@ var words_mixed = ["sol", "pez", "luz", "mar", "sal", "dos", "azul", "pan", "mel
 var words_inverse = ["espejo", "espada", "isla", "arma", "alto", "astuto", "ancho", "espina", "escudo", "asco", "antes", "indio"]
 var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase", "bruja", "tripa", "fresa", "grúa", "brazo", "fruta", "sobre", "tigre", "sopla", "dobla", "abre", "otro"]
 var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta", "cresta", "frente", "presta"]
-var phrases = ["mira la foto de mi perro", "dame zumo de uva", "mi mono me mola", "dame la mano"]
+var phrases = [ "casi la pilla", "dame la mano", "dame zumo de uva", "me como la sopa yo solo", "me duele la mano", "mi mono me mola", "mira esa vaca rosa", "no me da la gana", "no veo nada", "pásame el pan", "se ha ido mi loro", "toma el tomate", "tócame la cabeza", "¿me la pelas?", "échame leche","mira la foto de mi perro"]
+var letters_font = load("res://font_escolar_112.tres")
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -41,10 +42,12 @@ func _ready():
 		globals.caps = globals.settings["words"]["caps"]
 		globals.all_alphabet = globals.settings["words"]["all_alphabet"]
 		globals.see_words = globals.settings["words"]["see_words"]
+		globals.num_words = globals.settings["words"]["num_words"]
 	else:
 		globals.caps = globals.settings["phrases"]["caps"]
 		globals.all_alphabet = globals.settings["phrases"]["all_alphabet"]
 		globals.see_words = globals.settings["phrases"]["see_phrases"]
+		globals.num_words = 1
 		
 	upper_control()
 	spaces = []
@@ -106,6 +109,9 @@ func restart_game():
 				words_letters.append(l)
 		addValidLetters(words_letters)
 		
+	for container in word_containers:
+		container.position.y = 10000
+		
 	if globals.play_word:	
 		for i in range(len(current_words)):
 			create_word(i,len(current_words),current_words[i])
@@ -151,10 +157,14 @@ func choose_valid_words():
 	return w
 	
 func select_words():			
+	
 	var w = []
-	for i in range(globals.settings["words"]["num_words"]):
+	for i in range(globals.num_words):
 		w.append(shuffled_words[word_index])
 		word_index = (word_index + 1) % len(shuffled_words)
+	print(len(shuffled_words))
+	print(word_index)
+	print (w)
 	return w
 		
 func addValidLetters(letters):	
@@ -186,6 +196,8 @@ func safe_word(word):
 	safe_name = safe_name.replace("ú","u")
 	safe_name = safe_name.replace("ñ","n")
 	safe_name = safe_name.replace(" ","_")
+	safe_name = safe_name.replace("¿","")
+	safe_name = safe_name.replace("?","")
 	return safe_name
 
 	
@@ -218,6 +230,12 @@ func create_word(num, total, word):
 		if word[i] == ' ':
 			var l = Label.new()
 			l.set_text("          ")
+			container.get_node("VBoxContainer/letters").add_child(l)
+		elif word[i] == '¿' or word[i] == '?':
+			var l = Label.new()
+			l.set_text(word[i])
+			l.add_color_override("font_color", Color(0,0,0))
+			l.add_font_override("font", letters_font)
 			container.get_node("VBoxContainer/letters").add_child(l)
 		else:
 			var space = load("res://WordLetter.tscn").instance()
@@ -392,7 +410,7 @@ func end_success():
 func _on_img_gui_input( ev, num ):
 	if ev is InputEventMouseButton:
 		if ev.button_index == BUTTON_LEFT:
-			if ev.pressed:		
+			if ev.pressed:
 				var safe_name = safe_word(current_words[num-1])		
 				var sfx = load("res://assets/audio/" + safe_name + ".wav") 
 				get_node("AudioStreamPlayer").stream = sfx

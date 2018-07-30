@@ -4,6 +4,7 @@ var caps = false
 var all_alphabet = false
 var play_word = true
 var see_words = false
+var num_words = 1
 
 # Default settings
 var settings = {
