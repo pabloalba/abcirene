@@ -3,6 +3,7 @@ extends ColorRect
 const MODE_PLAYER = 0
 const MODE_ANIM = 1
 const MODE_SUCCESS = 2
+const MIN_TIME_KEYBOARD = 0.5
 # "pie", "pisa", 
 var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "púa", "mío", "cose"]
 var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
@@ -38,6 +39,8 @@ var current_space_num = 0
 var current_words
 var current_word_num
 var words_letters = []
+var time_keyboard = 0
+var last_key = null
 
 func _ready():	
 	randomize()
@@ -67,6 +70,8 @@ func _ready():
 	word_containers.append(get_node("Phrase"))
 	drag = false
 	mode = MODE_PLAYER
+	last_key = null
+	time_keyboard = 0
 	generate_words()
 	restart_game()
 	
@@ -177,7 +182,8 @@ func addValidLetters(letters):
 		else:
 			l.get_node("Label").set("custom_colors/font_color", "#807f85")
 
-func _process(delta):	
+func _process(delta):
+	time_keyboard += delta
 	if mode == MODE_ANIM:			
 		failsafe -= delta
 		if failsafe <=0:
@@ -353,7 +359,7 @@ func _on_ButtonReload_pressed():
 		restart_game()
 
 
-func _on_letter_pressed(l):
+func _on_letter_pressed(l):	
 	if mode == MODE_PLAYER and current_space_num < len(spaces):
 		if spaces[current_space_num].simple_letter == l:
 			spaces[current_space_num].mark_as_correct()
@@ -445,3 +451,12 @@ func _on_Letter_gui_input(ev, l):
 			if ev.pressed:
 				if globals.settings["words"]["all_alphabet"] or l in words_letters:
 					_on_letter_pressed(l)
+
+func _input(ev):
+	if ev is InputEventKey:
+		var l = char(ev.unicode).to_lower()
+		if l != last_key or time_keyboard > MIN_TIME_KEYBOARD:
+			time_keyboard = 0
+			last_key = l
+			_on_letter_pressed(l)
+		

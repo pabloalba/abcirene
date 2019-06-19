@@ -7,143 +7,47 @@
 [ext_resource path="res://assets/img/btn_opciones.png" type="Texture" id=5]
 
 [node name="MainMenu" type="ColorRect"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_right = 1280.0
 margin_bottom = 720.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_top = 360.0
 margin_right = 1280.0
 margin_bottom = 720.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.733333, 0.952941, 0.898039, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 330.0
 margin_top = 160.0
 margin_right = 971.0
 margin_bottom = 270.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 2 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="btnWords" type="Button" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="btnWords" type="Button" parent="."]
 margin_left = 345.0
 margin_top = 450.0
 margin_right = 615.0
 margin_bottom = 534.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 3 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="btnPhrases" type="Button" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="btnPhrases" type="Button" parent="."]
 margin_left = 715.0
 margin_top = 450.0
 margin_right = 985.0
 margin_bottom = 534.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 4 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="btnSettings" type="Button" parent="." index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="btnSettings" type="Button" parent="."]
 margin_left = 1010.0
 margin_top = 615.0
 margin_right = 1216.0
 margin_bottom = 673.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 5 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="btnWords" to="." method="_on_btnWords_pressed"]
-
 [connection signal="pressed" from="btnPhrases" to="." method="_on_btnPhrases_pressed"]
-
 [connection signal="pressed" from="btnSettings" to="." method="_on_btnSettings_pressed"]
-
-
