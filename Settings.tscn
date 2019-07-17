@@ -11,2496 +11,1117 @@
 [ext_resource path="res://MonserratMedium18.tres" type="DynamicFont" id=9]
 [ext_resource path="res://MonserratBold18.tres" type="DynamicFont" id=10]
 
-[node name="Settings" type="ColorRect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Settings" type="ColorRect"]
 margin_right = 1280.0
 margin_bottom = 720.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="ButtonHome" type="Button" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonHome" type="Button" parent="."]
 margin_left = 24.0
 margin_top = 24.0
 margin_right = 100.0
 margin_bottom = 93.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0.329412, 0.776471, 0.921569, 1 )
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 3 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="TextureRect" type="TextureRect" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 140.0
 margin_top = 93.0
 margin_right = 1160.0
 margin_bottom = 95.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 4 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="PalabrasSettingSelected" type="TextureRect" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PalabrasSettingSelected" type="TextureRect" parent="."]
 margin_left = 140.0
 margin_top = 85.0
-margin_right = 480.0
+margin_right = 395.0
 margin_bottom = 93.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="FrasesSettingSelected" type="TextureRect" parent="." index="3"]
-
+[node name="FrasesSettingSelected" type="TextureRect" parent="."]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 480.0
+margin_left = 395.0
 margin_top = 85.0
-margin_right = 820.0
+margin_right = 650.0
 margin_bottom = 93.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="EstadisticasSettingSelected" type="TextureRect" parent="." index="4"]
-
+[node name="ConfiguracionSettingSelected" type="TextureRect" parent="."]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 820.0
+margin_left = 650.0
+margin_top = 85.0
+margin_right = 905.0
+margin_bottom = 93.0
+texture = ExtResource( 5 )
+
+[node name="EstadisticasSettingSelected" type="TextureRect" parent="."]
+visible = false
+margin_left = 905.0
 margin_top = 85.0
 margin_right = 1160.0
 margin_bottom = 93.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 5 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
 
-[node name="Palabras" type="ColorRect" parent="." index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 257.0
+[node name="Palabras" type="ColorRect" parent="."]
+margin_left = 201.0
 margin_top = 50.0
-margin_right = 399.0
+margin_right = 343.0
 margin_bottom = 85.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Grow Direction", "Rect" ]
 
-[node name="LabelPalabras" type="Label" parent="Palabras" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 142.0
+[node name="LabelPalabras" type="Label" parent="Palabras"]
+margin_right = 82.0505
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.329412, 0.776471, 0.921569, 1 )
 text = "Palabras"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Frases" type="ColorRect" parent="." index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 615.0
+[node name="Frases" type="ColorRect" parent="."]
+margin_left = 469.0
 margin_top = 50.0
-margin_right = 757.0
+margin_right = 574.0
 margin_bottom = 85.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Grow Direction", "Rect" ]
 
-[node name="LabelFrases" type="Label" parent="Frases" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 142.0
+[node name="LabelFrases" type="Label" parent="Frases"]
+margin_right = 1.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.329412, 0.776471, 0.921569, 1 )
 text = "Frases"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Estadisticas" type="ColorRect" parent="." index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 920.0
+[node name="Configuracion" type="ColorRect" parent="."]
+margin_left = 666.0
 margin_top = 50.0
-margin_right = 1062.0
+margin_right = 896.0
 margin_bottom = 85.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Grow Direction", "Rect" ]
 
-[node name="LabelEstadisticas" type="Label" parent="Estadisticas" index="0"]
+[node name="LabelConfiguracion" type="Label" parent="Configuracion"]
+margin_right = 232.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.329412, 0.776471, 0.921569, 1 )
+text = "Configuración"
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Estadisticas" type="ColorRect" parent="."]
+margin_left = 935.0
+margin_top = 50.0
+margin_right = 1136.0
+margin_bottom = 85.0
+
+[node name="LabelEstadisticas" type="Label" parent="Estadisticas"]
 margin_right = 199.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.329412, 0.776471, 0.921569, 1 )
 text = "Estadísticas"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="PalabrasContainer" type="ColorRect" parent="." index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PalabrasContainer" type="ColorRect" parent="."]
 margin_left = 140.0
 margin_top = 100.0
 margin_right = 1279.0
 margin_bottom = 719.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="SaveButton" type="Button" parent="PalabrasContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SaveButton" type="Button" parent="PalabrasContainer"]
 margin_left = 862.0
 margin_top = 520.0
 margin_right = 1073.0
 margin_bottom = 582.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 6 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="LblView" type="Label" parent="PalabrasContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblView" type="Label" parent="PalabrasContainer"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 168.0
 margin_bottom = 61.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Visualización"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWords" type="Label" parent="PalabrasContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWords" type="Label" parent="PalabrasContainer"]
 margin_left = 5.0
 margin_top = 160.0
 margin_right = 103.0
 margin_bottom = 191.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Palabras"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblGroups" type="Label" parent="PalabrasContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblGroups" type="Label" parent="PalabrasContainer"]
 margin_left = 5.0
 margin_top = 290.0
 margin_right = 103.0
 margin_bottom = 321.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Grupos"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblSounds" type="Label" parent="PalabrasContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblSounds" type="Label" parent="PalabrasContainer"]
 margin_left = 5.0
 margin_top = 500.0
 margin_right = 103.0
 margin_bottom = 531.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sonidos al acabar una palabra"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="CtrlWordsOnlyLetters" parent="PalabrasContainer" index="5" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsOnlyLetters" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 70.0
 margin_bottom = 110.0
 hint_tooltip = "Ver [b]solo[/b] las letras de las palabras"
-_sections_unfolded = [ "Hint", "Material" ]
 
-[node name="CtrlWordsAllLetters" parent="PalabrasContainer" index="6" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsAllLetters" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 495.0
 margin_top = 70.0
 margin_right = 535.0
 margin_bottom = 110.0
 hint_tooltip = "Ver [b]todas[/b] las letras en el teclado"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlWordsSeeWords" parent="PalabrasContainer" index="7" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsSeeWords" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 105.0
 margin_bottom = 145.0
 hint_tooltip = "Mostrar la palabra junto al dibujo"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlWordsCaps" parent="PalabrasContainer" index="8" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsCaps" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 495.0
 margin_top = 105.0
 margin_right = 535.0
 margin_bottom = 145.0
 hint_tooltip = "Ver todo en mayúsculas"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlWordsNumWords1" parent="PalabrasContainer" index="9" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsNumWords1" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 200.0
 margin_bottom = 240.0
 hint_tooltip = "Una palabra"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsNumWords2" parent="PalabrasContainer" index="10" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsNumWords2" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 200.0
 margin_right = 450.0
 margin_bottom = 240.0
 hint_tooltip = "Dos palabras"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsNumWords3" parent="PalabrasContainer" index="11" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsNumWords3" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 745.0
 margin_top = 200.0
 margin_right = 785.0
 margin_bottom = 240.0
 hint_tooltip = "Tres palabras"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsNumWords4" parent="PalabrasContainer" index="12" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsNumWords4" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 240.0
 margin_bottom = 280.0
 hint_tooltip = "Cuatro palabras"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsNumWords6" parent="PalabrasContainer" index="13" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsNumWords6" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 240.0
 margin_right = 450.0
 margin_bottom = 280.0
 hint_tooltip = "Seis palabras"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupMLSCP" parent="PalabrasContainer" index="14" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupMLSCP" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 330.0
 margin_bottom = 370.0
 hint_tooltip = "M L S C P"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupTJZR" parent="PalabrasContainer" index="15" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupTJZR" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 330.0
 margin_right = 450.0
 margin_bottom = 370.0
 hint_tooltip = "T J Z RR"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupNBVFH" parent="PalabrasContainer" index="16" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupNBVFH" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 745.0
 margin_top = 330.0
 margin_right = 785.0
 margin_bottom = 370.0
 hint_tooltip = "N B\\V F H"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupDGLLCHR" parent="PalabrasContainer" index="17" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupDGLLCHR" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 370.0
 margin_bottom = 410.0
 hint_tooltip = "D G LL CH R"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupNYX" parent="PalabrasContainer" index="18" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupNYX" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 370.0
 margin_right = 450.0
 margin_bottom = 410.0
 hint_tooltip = "Ñ Y X"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupQUCECI" parent="PalabrasContainer" index="19" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupQUCECI" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 745.0
 margin_top = 370.0
 margin_right = 785.0
 margin_bottom = 410.0
 hint_tooltip = "QU CE\\CI"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupPluri" parent="PalabrasContainer" index="20" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupPluri" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 410.0
 margin_bottom = 450.0
 hint_tooltip = "Plurisilabicas"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupMix" parent="PalabrasContainer" index="21" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupMix" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 410.0
 margin_right = 450.0
 margin_bottom = 450.0
 hint_tooltip = "Sílabas mixtas"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupInv" parent="PalabrasContainer" index="22" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupInv" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 745.0
 margin_top = 410.0
 margin_right = 785.0
 margin_bottom = 450.0
 hint_tooltip = "Sílabas inversas"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupLocked" parent="PalabrasContainer" index="23" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupLocked" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 450.0
 margin_bottom = 490.0
 hint_tooltip = "Sílabas trabadas"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsGroupComp" parent="PalabrasContainer" index="24" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsGroupComp" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 450.0
 margin_right = 450.0
 margin_bottom = 490.0
 hint_tooltip = "Sílabas complejas"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsSoundLocution" parent="PalabrasContainer" index="25" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsSoundLocution" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_top = 535.0
 margin_bottom = 575.0
 hint_tooltip = "Locución"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="CtrlWordsSoundWin" parent="PalabrasContainer" index="26" instance=ExtResource( 8 )]
-
+[node name="CtrlWordsSoundWin" parent="PalabrasContainer" instance=ExtResource( 8 )]
 margin_left = 410.0
 margin_top = 535.0
 margin_right = 450.0
 margin_bottom = 575.0
 hint_tooltip = "Aplausos"
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="FrasesContainer" type="ColorRect" parent="." index="9"]
-
+[node name="FrasesContainer" type="ColorRect" parent="."]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 140.0
 margin_top = 100.0
 margin_right = 1279.0
 margin_bottom = 719.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="SaveButton2" type="Button" parent="FrasesContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SaveButton2" type="Button" parent="FrasesContainer"]
 margin_left = 862.0
 margin_top = 520.0
 margin_right = 1073.0
 margin_bottom = 582.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 icon = ExtResource( 6 )
 flat = true
-align = 1
-_sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="FrasesContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="FrasesContainer"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 168.0
 margin_bottom = 61.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Visualización"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Sonidos" type="Label" parent="FrasesContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Sonidos" type="Label" parent="FrasesContainer"]
 margin_left = 5.0
 margin_top = 160.0
 margin_right = 103.0
 margin_bottom = 191.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sonidos al acabar una frase"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="CtrlPhrasesOnlyLetters" parent="FrasesContainer" index="3" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesOnlyLetters" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_top = 70.0
 margin_bottom = 110.0
 hint_tooltip = "Ver [b]solo[/b] las letras de las frases"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlPhrasesAllLetters" parent="FrasesContainer" index="4" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesAllLetters" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_left = 495.0
 margin_top = 70.0
 margin_right = 535.0
 margin_bottom = 110.0
 hint_tooltip = "Ver [b]todas[/b] las letras en el teclado"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlPhrasesSeePhrases" parent="FrasesContainer" index="5" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesSeePhrases" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_top = 105.0
 margin_bottom = 145.0
 hint_tooltip = "Mostrar la frase junto al dibujo"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlPhrasesCaps" parent="FrasesContainer" index="6" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesCaps" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_left = 495.0
 margin_top = 105.0
 margin_right = 535.0
 margin_bottom = 145.0
 hint_tooltip = "Ver todo en mayúsculas"
-_sections_unfolded = [ "Hint" ]
 
-[node name="CtrlPhrasesLocution" parent="FrasesContainer" index="7" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesLocution" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_top = 195.0
 margin_bottom = 235.0
 hint_tooltip = "Locución"
-_sections_unfolded = [ "Hint" ]
 
 [node name="RichTextLabel" parent="FrasesContainer/CtrlPhrasesLocution/TextureRect" index="0"]
-
 bbcode_text = "Locucuión de palbras"
 meta_underlined = false
 text = "Locucuión de palbras"
 
-[node name="CtrlPhrasesSoundWin" parent="FrasesContainer" index="8" instance=ExtResource( 8 )]
-
+[node name="CtrlPhrasesSoundWin" parent="FrasesContainer" instance=ExtResource( 8 )]
 margin_left = 495.0
 margin_top = 195.0
 margin_right = 535.0
 margin_bottom = 235.0
 hint_tooltip = "Aplausos"
-_sections_unfolded = [ "Hint" ]
 
-[node name="EstadisticasContainer" type="ColorRect" parent="." index="10"]
-
+[node name="ConfiguracionContainer" type="ColorRect" parent="."]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 140.0
 margin_top = 100.0
 margin_right = 1279.0
 margin_bottom = 719.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="Line2D" type="Line2D" parent="EstadisticasContainer" index="0"]
+[node name="SaveButton3" type="Button" parent="ConfiguracionContainer"]
+margin_left = 862.0
+margin_top = 520.0
+margin_right = 1073.0
+margin_bottom = 582.0
+icon = ExtResource( 6 )
+flat = true
 
+[node name="Label" type="Label" parent="ConfiguracionContainer"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 168.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Visualización"
+
+[node name="CtrlRotate" parent="ConfiguracionContainer" instance=ExtResource( 8 )]
+margin_top = 70.0
+margin_bottom = 110.0
+hint_tooltip = "Girar pantalla 180º"
+
+[node name="EstadisticasContainer" type="ColorRect" parent="."]
+visible = false
+margin_left = 140.0
+margin_top = 100.0
+margin_right = 1279.0
+margin_bottom = 719.0
+
+[node name="Line2D" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 120, 130, 120 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1940767392
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D17" type="Line2D" parent="EstadisticasContainer" index="1"]
-
+[node name="Line2D17" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 120, 480, 120 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1940767392
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D27" type="Line2D" parent="EstadisticasContainer" index="2"]
-
+[node name="Line2D27" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 120, 1020, 120 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1940767392
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D2" type="Line2D" parent="EstadisticasContainer" index="3"]
-
+[node name="Line2D2" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 170, 130, 170 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 2136415539
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D15" type="Line2D" parent="EstadisticasContainer" index="4"]
-
+[node name="Line2D15" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 170, 480, 170 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 2136415539
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D24" type="Line2D" parent="EstadisticasContainer" index="5"]
-
+[node name="Line2D24" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 170, 1020, 170 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 2136415539
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D3" type="Line2D" parent="EstadisticasContainer" index="6"]
-
+[node name="Line2D3" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 220, 130, 220 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1790856965
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D18" type="Line2D" parent="EstadisticasContainer" index="7"]
-
+[node name="Line2D18" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 220, 480, 220 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1790856965
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D26" type="Line2D" parent="EstadisticasContainer" index="8"]
-
+[node name="Line2D26" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 220, 1020, 220 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = -1790856965
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D4" type="Line2D" parent="EstadisticasContainer" index="9"]
-
+[node name="Line2D4" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 270, 130, 270 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 22
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D14" type="Line2D" parent="EstadisticasContainer" index="10"]
-
+[node name="Line2D14" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 270, 480, 270 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 22
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D23" type="Line2D" parent="EstadisticasContainer" index="11"]
-
+[node name="Line2D23" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 270, 1020, 270 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 22
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D5" type="Line2D" parent="EstadisticasContainer" index="12"]
-
+[node name="Line2D5" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 320, 130, 320 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D11" type="Line2D" parent="EstadisticasContainer" index="13"]
-
+[node name="Line2D11" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 320, 480, 320 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D20" type="Line2D" parent="EstadisticasContainer" index="14"]
-
+[node name="Line2D20" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 320, 1020, 320 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D6" type="Line2D" parent="EstadisticasContainer" index="15"]
-
+[node name="Line2D6" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 370, 130, 370 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D16" type="Line2D" parent="EstadisticasContainer" index="16"]
-
+[node name="Line2D16" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 370, 480, 370 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D25" type="Line2D" parent="EstadisticasContainer" index="17"]
-
+[node name="Line2D25" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 370, 1020, 370 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D7" type="Line2D" parent="EstadisticasContainer" index="18"]
-
+[node name="Line2D7" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 420, 130, 420 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D12" type="Line2D" parent="EstadisticasContainer" index="19"]
-
+[node name="Line2D12" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 420, 480, 420 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D21" type="Line2D" parent="EstadisticasContainer" index="20"]
-
+[node name="Line2D21" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 420, 1020, 420 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 3
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D8" type="Line2D" parent="EstadisticasContainer" index="21"]
-
+[node name="Line2D8" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 470, 130, 470 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 101
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D10" type="Line2D" parent="EstadisticasContainer" index="22"]
-
+[node name="Line2D10" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 470, 480, 470 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 101
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D19" type="Line2D" parent="EstadisticasContainer" index="23"]
-
+[node name="Line2D19" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 470, 1020, 470 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 101
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D9" type="Line2D" parent="EstadisticasContainer" index="24"]
-
+[node name="Line2D9" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 0, 520, 130, 520 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 182704272
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D13" type="Line2D" parent="EstadisticasContainer" index="25"]
-
+[node name="Line2D13" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 200, 520, 480, 520 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 182704272
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Line2D22" type="Line2D" parent="EstadisticasContainer" index="26"]
-
+[node name="Line2D22" type="Line2D" parent="EstadisticasContainer"]
 points = PoolVector2Array( 530, 520, 1020, 520 )
 width = 1.5
 default_color = Color( 0.815686, 0.937255, 0.976471, 1 )
 texture_mode = 182704272
-sharp_limit = 2.0
-round_precision = 8
 
-[node name="Label" type="Label" parent="EstadisticasContainer" index="27"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="EstadisticasContainer"]
 margin_left = 443.0
 margin_top = 5.0
 margin_right = 598.0
 margin_bottom = 28.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Ranking de fallos"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label2" type="Label" parent="EstadisticasContainer" index="28"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label2" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 35.0
 margin_right = 98.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Letra"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label4" type="Label" parent="EstadisticasContainer" index="29"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label4" type="Label" parent="EstadisticasContainer"]
 margin_left = 300.0
 margin_top = 35.0
 margin_right = 455.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Palabra"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label5" type="Label" parent="EstadisticasContainer" index="30"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label5" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 35.0
 margin_right = 735.0
 margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Frase"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label6" type="Label" parent="EstadisticasContainer" index="31"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label6" type="Label" parent="EstadisticasContainer"]
 margin_top = 85.0
 margin_right = 30.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label33" type="Label" parent="EstadisticasContainer" index="32"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label33" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 85.0
 margin_right = 560.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label23" type="Label" parent="EstadisticasContainer" index="33"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label23" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 85.0
 margin_right = 230.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label7" type="Label" parent="EstadisticasContainer" index="34"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label7" type="Label" parent="EstadisticasContainer"]
 margin_top = 135.0
 margin_right = 30.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label31" type="Label" parent="EstadisticasContainer" index="35"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label31" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 135.0
 margin_right = 560.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label21" type="Label" parent="EstadisticasContainer" index="36"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label21" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 135.0
 margin_right = 230.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label8" type="Label" parent="EstadisticasContainer" index="37"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label8" type="Label" parent="EstadisticasContainer"]
 margin_top = 185.0
 margin_right = 30.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label29" type="Label" parent="EstadisticasContainer" index="38"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label29" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 185.0
 margin_right = 560.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label19" type="Label" parent="EstadisticasContainer" index="39"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label19" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 185.0
 margin_right = 230.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label9" type="Label" parent="EstadisticasContainer" index="40"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label9" type="Label" parent="EstadisticasContainer"]
 margin_top = 235.0
 margin_right = 30.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label28" type="Label" parent="EstadisticasContainer" index="41"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label28" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 235.0
 margin_right = 560.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label18" type="Label" parent="EstadisticasContainer" index="42"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label18" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 235.0
 margin_right = 230.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label10" type="Label" parent="EstadisticasContainer" index="43"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label10" type="Label" parent="EstadisticasContainer"]
 margin_top = 285.0
 margin_right = 30.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label30" type="Label" parent="EstadisticasContainer" index="44"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label30" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 285.0
 margin_right = 560.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label20" type="Label" parent="EstadisticasContainer" index="45"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label20" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 285.0
 margin_right = 230.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label11" type="Label" parent="EstadisticasContainer" index="46"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label11" type="Label" parent="EstadisticasContainer"]
 margin_top = 335.0
 margin_right = 30.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label35" type="Label" parent="EstadisticasContainer" index="47"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label35" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 335.0
 margin_right = 560.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label25" type="Label" parent="EstadisticasContainer" index="48"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label25" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 335.0
 margin_right = 230.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "6."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label12" type="Label" parent="EstadisticasContainer" index="49"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label12" type="Label" parent="EstadisticasContainer"]
 margin_top = 385.0
 margin_right = 30.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label32" type="Label" parent="EstadisticasContainer" index="50"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label32" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 385.0
 margin_right = 560.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label22" type="Label" parent="EstadisticasContainer" index="51"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label22" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 385.0
 margin_right = 230.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "7."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label13" type="Label" parent="EstadisticasContainer" index="52"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label13" type="Label" parent="EstadisticasContainer"]
 margin_top = 435.0
 margin_right = 30.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "8."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label34" type="Label" parent="EstadisticasContainer" index="53"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label34" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 435.0
 margin_right = 560.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "8."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label24" type="Label" parent="EstadisticasContainer" index="54"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label24" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 435.0
 margin_right = 230.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "8."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label14" type="Label" parent="EstadisticasContainer" index="55"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label14" type="Label" parent="EstadisticasContainer"]
 margin_top = 485.0
 margin_right = 30.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "9."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label26" type="Label" parent="EstadisticasContainer" index="56"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label26" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 485.0
 margin_right = 560.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "9."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label16" type="Label" parent="EstadisticasContainer" index="57"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label16" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 485.0
 margin_right = 230.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "9."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label15" type="Label" parent="EstadisticasContainer" index="58"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label15" type="Label" parent="EstadisticasContainer"]
 margin_top = 535.0
 margin_right = 30.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label27" type="Label" parent="EstadisticasContainer" index="59"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label27" type="Label" parent="EstadisticasContainer"]
 margin_left = 530.0
 margin_top = 535.0
 margin_right = 560.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Label17" type="Label" parent="EstadisticasContainer" index="60"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label17" type="Label" parent="EstadisticasContainer"]
 margin_left = 200.0
 margin_top = 535.0
 margin_right = 230.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10."
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter1" type="Label" parent="EstadisticasContainer" index="61"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter1" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 85.0
 margin_right = 130.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter2" type="Label" parent="EstadisticasContainer" index="62"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter2" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 135.0
 margin_right = 192.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter3" type="Label" parent="EstadisticasContainer" index="63"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter3" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 185.0
 margin_right = 192.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter4" type="Label" parent="EstadisticasContainer" index="64"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter4" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 235.0
 margin_right = 192.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter5" type="Label" parent="EstadisticasContainer" index="65"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter5" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 285.0
 margin_right = 192.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter6" type="Label" parent="EstadisticasContainer" index="66"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter6" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 335.0
 margin_right = 192.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter7" type="Label" parent="EstadisticasContainer" index="67"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter7" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 385.0
 margin_right = 192.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter8" type="Label" parent="EstadisticasContainer" index="68"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter8" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 435.0
 margin_right = 192.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter9" type="Label" parent="EstadisticasContainer" index="69"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter9" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 485.0
 margin_right = 192.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblLetter10" type="Label" parent="EstadisticasContainer" index="70"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblLetter10" type="Label" parent="EstadisticasContainer"]
 margin_left = 50.0
 margin_top = 535.0
 margin_right = 192.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord1" type="Label" parent="EstadisticasContainer" index="71"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord1" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 85.0
 margin_right = 470.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord2" type="Label" parent="EstadisticasContainer" index="72"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord2" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 135.0
 margin_right = 392.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord3" type="Label" parent="EstadisticasContainer" index="73"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord3" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 185.0
 margin_right = 392.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord4" type="Label" parent="EstadisticasContainer" index="74"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord4" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 235.0
 margin_right = 392.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord5" type="Label" parent="EstadisticasContainer" index="75"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord5" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 285.0
 margin_right = 392.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord6" type="Label" parent="EstadisticasContainer" index="76"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord6" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 335.0
 margin_right = 392.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord7" type="Label" parent="EstadisticasContainer" index="77"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord7" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 385.0
 margin_right = 392.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord8" type="Label" parent="EstadisticasContainer" index="78"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord8" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 435.0
 margin_right = 392.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord9" type="Label" parent="EstadisticasContainer" index="79"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord9" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 485.0
 margin_right = 392.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblWord10" type="Label" parent="EstadisticasContainer" index="80"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblWord10" type="Label" parent="EstadisticasContainer"]
 margin_left = 250.0
 margin_top = 535.0
 margin_right = 392.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase1" type="Label" parent="EstadisticasContainer" index="81"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase1" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 85.0
 margin_right = 993.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase2" type="Label" parent="EstadisticasContainer" index="82"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase2" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 135.0
 margin_right = 993.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase3" type="Label" parent="EstadisticasContainer" index="83"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase3" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 185.0
 margin_right = 993.0
 margin_bottom = 208.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase4" type="Label" parent="EstadisticasContainer" index="84"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase4" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 235.0
 margin_right = 993.0
 margin_bottom = 258.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase5" type="Label" parent="EstadisticasContainer" index="85"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase5" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 285.0
 margin_right = 993.0
 margin_bottom = 308.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase6" type="Label" parent="EstadisticasContainer" index="86"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase6" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 335.0
 margin_right = 993.0
 margin_bottom = 358.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase7" type="Label" parent="EstadisticasContainer" index="87"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase7" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 385.0
 margin_right = 993.0
 margin_bottom = 408.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase8" type="Label" parent="EstadisticasContainer" index="88"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase8" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 435.0
 margin_right = 993.0
 margin_bottom = 458.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase9" type="Label" parent="EstadisticasContainer" index="89"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase9" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 485.0
 margin_right = 993.0
 margin_bottom = 508.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="LblPhrase10" type="Label" parent="EstadisticasContainer" index="90"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LblPhrase10" type="Label" parent="EstadisticasContainer"]
 margin_left = 580.0
 margin_top = 535.0
 margin_right = 993.0
 margin_bottom = 558.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+rotating = true
+current = true
 
 [connection signal="pressed" from="ButtonHome" to="." method="_on_ButtonHome_pressed"]
-
 [connection signal="gui_input" from="Palabras" to="." method="_on_Palabras_gui_input"]
-
 [connection signal="gui_input" from="Frases" to="." method="_on_Frases_gui_input"]
-
+[connection signal="gui_input" from="Configuracion" to="." method="_on_Configuracion_gui_input"]
 [connection signal="gui_input" from="Estadisticas" to="." method="_on_Estadisticas_gui_input"]
-
 [connection signal="pressed" from="PalabrasContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
-
 [connection signal="pressed" from="FrasesContainer/SaveButton2" to="." method="_on_SaveButton_pressed"]
-
+[connection signal="pressed" from="ConfiguracionContainer/SaveButton3" to="." method="_on_SaveButton_pressed"]
 
 [editable path="FrasesContainer/CtrlPhrasesLocution"]

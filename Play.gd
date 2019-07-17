@@ -42,7 +42,13 @@ var words_letters = []
 var time_keyboard = 0
 var last_key = null
 
-func _ready():	
+func _ready():
+	if globals.settings["settings"]["rotate"]:
+		get_node("Camera2D").rotation_degrees = 180
+	else:
+		get_node("Camera2D").rotation_degrees = 0
+	words_locked.sort()
+	print (words_locked)
 	randomize()
 	if globals.play_word:
 		globals.caps = globals.settings["words"]["caps"]

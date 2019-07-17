@@ -31,6 +31,8 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	randomize()
+	
+	
 	words = choose_valid_words()
 	shuffled_words = shuffle_list(words)
 	word_index = 0

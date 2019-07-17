@@ -8,6 +8,10 @@ class StatisticsSorter:
 
 
 func _ready():
+	if globals.settings["settings"]["rotate"]:
+		get_node("Camera2D").rotation_degrees = 180
+	else:
+		get_node("Camera2D").rotation_degrees = 0
 	var group = [get_node("PalabrasContainer/CtrlWordsOnlyLetters"), get_node("PalabrasContainer/CtrlWordsAllLetters")]
 	for item in group:
 		item.set_group(group)
@@ -75,6 +79,9 @@ func load_old_settings():
 	if globals.settings["phrases"]["sound_win"]:
 		get_node("FrasesContainer/CtrlPhrasesSoundWin").set_selected(true)
 		
+	if globals.settings["settings"]["rotate"]:
+		get_node("ConfiguracionContainer/CtrlRotate").set_selected(true)
+		
 		
 #	"statistics" : {
 #	}
@@ -90,9 +97,11 @@ func _select_section(num):
 	get_node("PalabrasSettingSelected").set_visible(false)
 	get_node("FrasesSettingSelected").set_visible(false)
 	get_node("EstadisticasSettingSelected").set_visible(false)
+	get_node("ConfiguracionSettingSelected").set_visible(false)
 	get_node("PalabrasContainer").set_visible(false)
 	get_node("FrasesContainer").set_visible(false)
 	get_node("EstadisticasContainer").set_visible(false)
+	get_node("ConfiguracionContainer").set_visible(false)
 	
 	if (num == 0):
 		get_node("PalabrasSettingSelected").set_visible(true)
@@ -103,6 +112,9 @@ func _select_section(num):
 	if (num == 2):
 		get_node("EstadisticasSettingSelected").set_visible(true)
 		get_node("EstadisticasContainer").set_visible(true)
+	if (num == 3):
+		get_node("ConfiguracionSettingSelected").set_visible(true)
+		get_node("ConfiguracionContainer").set_visible(true)
 	
 
 func _on_Frases_gui_input(ev):
@@ -124,6 +136,12 @@ func _on_Palabras_gui_input(ev):
 		if ev.button_index == BUTTON_LEFT:
 			if ev.pressed:
 				_select_section(0)
+				
+func _on_Configuracion_gui_input(ev):
+	if ev is InputEventMouseButton:
+		if ev.button_index == BUTTON_LEFT:
+			if ev.pressed:
+				_select_section(3)
 
 
 func save_settings():
@@ -168,6 +186,9 @@ func save_settings():
 	globals.settings["phrases"]["caps"] = get_node("FrasesContainer/CtrlPhrasesCaps").current_state
 	globals.settings["phrases"]["locution"] = get_node("FrasesContainer/CtrlPhrasesLocution").current_state
 	globals.settings["phrases"]["sound_win"] = get_node("FrasesContainer/CtrlPhrasesSoundWin").current_state
+	
+	globals.settings["settings"]["rotate"] = get_node("ConfiguracionContainer/CtrlRotate").current_state
+	
 		
 	
 func load_statistics():
@@ -207,3 +228,6 @@ func _on_SaveButton_pressed():
 	save_settings()
 	globals.save_game()
 	_on_ButtonHome_pressed()
+
+
+

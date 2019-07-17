@@ -48,6 +48,13 @@ margin_bottom = 673.0
 icon = ExtResource( 5 )
 flat = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 640, 360 )
+rotating = true
+current = true
+limit_left = 0
+limit_top = 0
+
 [connection signal="pressed" from="btnWords" to="." method="_on_btnWords_pressed"]
 [connection signal="pressed" from="btnPhrases" to="." method="_on_btnPhrases_pressed"]
 [connection signal="pressed" from="btnSettings" to="." method="_on_btnSettings_pressed"]

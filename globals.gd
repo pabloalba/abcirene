@@ -1,5 +1,5 @@
 extends Node
-const version = "2.0.0"
+const version = "2.0.1"
 var caps = false
 var all_alphabet = false
 var play_word = true
@@ -41,6 +41,9 @@ var settings = {
 		"letters": {},
 		"words": {},
 		"phrases": {}
+	},
+	"settings" : {
+		"rotate": false
 	}
 }
 
@@ -60,7 +63,12 @@ func load_game():
 		save_game.close()
 		
 		if "version" in temp_d and temp_d["version"] == version:
-			globals.settings = temp_d
+			globals.settings = temp_d			
+			loaded = true
+		if "version" in temp_d and temp_d["version"] == "2.0.0":
+			globals.settings = temp_d		
+			globals.settings["settings"] = {"rotate": false}
+			globals.settings["version"]  = version
 			loaded = true
 
 	if not loaded:
