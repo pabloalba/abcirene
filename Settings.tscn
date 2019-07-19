@@ -21,8 +21,10 @@ margin_left = 24.0
 margin_top = 24.0
 margin_right = 100.0
 margin_bottom = 93.0
+focus_mode = 0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color_disabled = Color( 0.329412, 0.776471, 0.921569, 1 )
+enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
 
@@ -127,6 +129,8 @@ margin_left = 862.0
 margin_top = 520.0
 margin_right = 1073.0
 margin_bottom = 582.0
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 6 )
 flat = true
 

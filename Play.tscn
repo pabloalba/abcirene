@@ -233,6 +233,8 @@ margin_left = 1120.0
 margin_top = 5.0
 margin_right = 1281.0
 margin_bottom = 75.0
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
 
@@ -249,6 +251,8 @@ margin_left = 5.0
 margin_top = 5.0
 margin_right = 81.0
 margin_bottom = 74.0
+focus_mode = 0
+enabled_focus_mode = 0
 icon = ExtResource( 5 )
 flat = true
 

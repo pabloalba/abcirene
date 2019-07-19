@@ -20,7 +20,7 @@ var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase
 var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta"]
 var phrases = [ "casi la pilla", "dame la mano", "dame zumo de uva", "me como la sopa yo solo", "me duele la mano", "mi mono me mola", "mira esa vaca rosa", "no me da la gana", "no veo nada", "pásame el pan", "se ha ido mi loro", "toma el tomate", "tócame la cabeza", "¿me la pelas?", "échame leche","mira la foto de mi perro"]
 var letters_font = load("res://font_escolar_112.tres")
-var aplause = load("res://assets/audio/aplause.wav") 
+var aplause = load("res://assets/audio/aplause.ogg") 
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -429,9 +429,10 @@ func end_success():
 
 
 func _play_word(safe_name, play_aplause):	
-	var music_player = get_node("AudioStreamPlayer")
-	var sfx = load("res://assets/audio/" + safe_name + ".wav") 
-	music_player.stream = sfx
+	var music_player = get_node("AudioStreamPlayer")	
+	var sfx = load("res://assets/audio/" + safe_name + ".ogg") 
+	sfx.set_loop(false) 
+	music_player.stream = sfx	
 	music_player.play()
 	if play_aplause:
 		music_player.connect("finished", self, "play_aplause", [music_player])
