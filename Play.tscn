@@ -230,13 +230,30 @@ alignment = 1
 
 [node name="ButtonReload" type="Button" parent="."]
 margin_left = 1120.0
-margin_top = 5.0
+margin_top = 2.94946
 margin_right = 1281.0
-margin_bottom = 75.0
+margin_bottom = 72.9495
 focus_mode = 0
 enabled_focus_mode = 0
 icon = ExtResource( 3 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonPrev" type="Button" parent="."]
+margin_left = 1102.0
+margin_top = 5.0
+margin_right = 1263.0
+margin_bottom = 75.0
+rect_scale = Vector2( -1, 1 )
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 550.0
@@ -682,6 +699,7 @@ current = true
 [connection signal="gui_input" from="Phrase/VBoxContainer/img" to="." method="_on_img_gui_input" binds= [ 1 ]]
 [connection signal="gui_input" from="Phrase/VBoxContainer/lbl" to="." method="_on_img_gui_input" binds= [ 1 ]]
 [connection signal="pressed" from="ButtonReload" to="." method="_on_ButtonReload_pressed"]
+[connection signal="pressed" from="ButtonPrev" to="." method="_on_ButtonPrev_pressed"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_ButtonBack_pressed"]
 [connection signal="gui_input" from="GridContainer/Letter" to="." method="_on_Letter_gui_input" binds= [ "q" ]]
 [connection signal="gui_input" from="GridContainer/Letter2" to="." method="_on_Letter_gui_input" binds= [ "w" ]]

@@ -48,7 +48,7 @@ func _ready():
 	else:
 		get_node("Camera2D").rotation_degrees = 0
 	words_locked.sort()
-	print (words_locked)
+	#print (words_locked)
 	randomize()
 	if globals.play_word:
 		globals.caps = globals.settings["words"]["caps"]
@@ -101,6 +101,7 @@ func restart_game():
 		for node in get_node(lc + "/VBoxContainer/letters").get_children():
 			get_node("Phrase/VBoxContainer/letters").remove_child(node)
 	
+		
 	current_words = select_words()
 	current_word_num = 0
 	
@@ -467,3 +468,9 @@ func _input(ev):
 			last_key = l
 			_on_letter_pressed(l)
 		
+
+
+func _on_ButtonPrev_pressed():
+	if mode == MODE_PLAYER:
+		word_index -= 2
+		restart_game()

@@ -215,7 +215,6 @@ func load_statistics():
 	
 	
 	
-	var i
 	for i in range(10):
 		if len(letters) > i: 
 			get_node("EstadisticasContainer/LblLetter"+str(i+1)).set_text(letters[i][0] + " ("+str(letters[i][1]) + ")")

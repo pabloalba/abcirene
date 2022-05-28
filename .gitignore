@@ -16,4 +16,7 @@ Thumbs.db
 *.stex
 *.import
 *.apk
+*.aab
 svg
+export_presets.cfg
+android
