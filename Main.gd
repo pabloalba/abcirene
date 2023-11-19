@@ -31,13 +31,13 @@ func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
 	randomize()
-	
-	
+
+
 	words = choose_valid_words()
 	shuffled_words = shuffle_list(words)
 	word_index = 0
 	new_word()
-	
+
 func choose_valid_words():
 	var w = []
 	if globals.words_mslcp_enabled:
@@ -62,28 +62,28 @@ func choose_valid_words():
 		w += words_locked
 	if globals.words_complex_enabled:
 		w += words_complex
-		
+
 	return w
 
-	
+
 func new_word():
 	for l in spaces:
 		remove_child(l)
-		
+
 	for l in letter_buttons:
 		remove_child(l)
-		
+
 	spaces = []
 	letter_buttons = []
-	
+
 	word_index = (word_index + 1) % len(shuffled_words)
-	
-	load_word(shuffled_words[word_index])	
+
+	load_word(shuffled_words[word_index])
 	mode = MODE_PLAYER
-	
+
 
 func _process(delta):
-	if mode == MODE_ANIM:				
+	if mode == MODE_ANIM:
 		if incorrect_letter == null:
 			mode = MODE_PLAYER
 		else:
@@ -96,13 +96,13 @@ func _process(delta):
 
 func load_word(word):
 	current_word = word
-	get_node("VBoxContainer/Word").set_text(word)	
+	get_node("VBoxContainer/Word").set_text(word)
 	var inc = 105
 	var x = (720 - (inc * len(word))) / 2
 	var letters = shuffle_word(word)
 	var texture = load("res://assets/img/"+word+".png")
 	get_node("VBoxContainer/HBoxContainer/WordImage").set_texture(texture)
-	
+
 	for i in range(len(word)):
 		var space = load("res://LetterSpace.tscn").instance()
 		space.position.x = x
@@ -111,9 +111,9 @@ func load_word(word):
 		add_child(space)
 		spaces.append(space)
 		x += inc
-		
+
 	x = (720 - (inc * len(word))) / 2
-	for i in range(len(word)):		
+	for i in range(len(word)):
 		var letter = load("res://LetterButton.tscn").instance()
 		letter.set_main_screen(self)
 		letter.set_letter(letters[i])
@@ -121,10 +121,10 @@ func load_word(word):
 		letter.position.x = x
 		letter.position.y = 950
 		x += inc
-		
+
 		add_child(letter)
-		
-		
+
+
 func check_letter(letter_button):
 	var ok = false
 	for space in spaces:
@@ -134,14 +134,14 @@ func check_letter(letter_button):
 				letter_button.position.y = space.position.y
 				letter_button.mark_as_correct()
 				ok = true
-				
+
 	if not ok:
 		mode = MODE_ANIM
 		failsafe = 3
 		letter_button.mark_as_incorrect()
 		incorrect_letter = letter_button
-		
-				
+
+
 func move_incorrect_letter(delta):
 	var end_x = false
 	var end_y = false
@@ -152,7 +152,7 @@ func move_incorrect_letter(delta):
 		incorrect_letter.position.x -= speed * delta
 	else:
 		incorrect_letter.position.x += speed * delta
-		
+
 	if abs(incorrect_letter.position.y - incorrect_letter.original_y) < 10:
 		incorrect_letter.position.y = incorrect_letter.original_y
 		end_y = true
@@ -160,15 +160,15 @@ func move_incorrect_letter(delta):
 		incorrect_letter.position.y -= speed * delta
 	else:
 		incorrect_letter.position.y += speed * delta
-		
+
 	if end_x and end_y:
 		incorrect_letter.unmark()
 		mode = MODE_PLAYER
-		
-	
-		
-	
-func shuffle_word(word):	
+
+
+
+
+func shuffle_word(word):
 	var list = []
 	for i in range(len(word)):
 		list.append(word[i])
@@ -177,7 +177,7 @@ func shuffle_word(word):
 func shuffle_list(list):
 	var shuffled_list = []
 	var index_list = range(list.size())
-	for i in range(list.size()):        
+	for i in range(list.size()):
 		var x = randi()%index_list.size()
 		shuffled_list.append(list[x])
 		index_list.remove(x)

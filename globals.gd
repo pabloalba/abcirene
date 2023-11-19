@@ -50,7 +50,7 @@ var settings = {
 
 func save_game():
 	var save_game = File.new()
-	if save_game.open(str("user://abcirene.save"), File.WRITE) == OK: # If the opening of the save file returns OK	
+	if save_game.open(str("user://abcirene.save"), File.WRITE) == OK: # If the opening of the save file returns OK
 		save_game.store_var(globals.settings) # then we store the contents of the var save inside it
 		save_game.close() # and we gracefully close the file :)
 
@@ -61,17 +61,17 @@ func load_game():
 		var temp_d # we create a temporary var to hold the contents of the save file
 		temp_d = save_game.get_var() # we get the contents of the save file and store it on TEMP_D
 		save_game.close()
-		
+
 		if "version" in temp_d and temp_d["version"] == version:
-			globals.settings = temp_d			
+			globals.settings = temp_d
 			loaded = true
 		if "version" in temp_d and temp_d["version"] == "2.0.0":
-			globals.settings = temp_d		
+			globals.settings = temp_d
 			globals.settings["settings"] = {"rotate": false}
 			globals.settings["version"]  = version
 			loaded = true
 
 	if not loaded:
 		print("creating new savegame")
-		save_game()		
-	
+		save_game()
+

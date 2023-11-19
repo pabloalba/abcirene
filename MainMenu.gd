@@ -1,7 +1,7 @@
 extends ColorRect
 
 func _ready():
-	globals.load_game()	
+	globals.load_game()
 	if globals.settings["settings"]["rotate"]:
 		get_node("Camera2D").rotation_degrees = 180
 	else:
@@ -20,4 +20,4 @@ func _on_btnWords_pressed():
 func _on_btnPhrases_pressed():
 	globals.play_word = false
 	get_tree().change_scene("res://Play.tscn")
-	
+

@@ -61,6 +61,14 @@ current = true
 limit_left = 0
 limit_top = 0
 
+[node name="Version" type="Label" parent="."]
+margin_left = 10.5946
+margin_top = 697.127
+margin_right = 50.5946
+margin_bottom = 711.127
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "v2.06"
+
 [connection signal="pressed" from="btnWords" to="." method="_on_btnWords_pressed"]
 [connection signal="pressed" from="btnPhrases" to="." method="_on_btnPhrases_pressed"]
 [connection signal="pressed" from="btnSettings" to="." method="_on_btnSettings_pressed"]

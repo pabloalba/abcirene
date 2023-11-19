@@ -4,11 +4,11 @@ const MODE_PLAYER = 0
 const MODE_ANIM = 1
 const MODE_SUCCESS = 2
 const MIN_TIME_KEYBOARD = 0.5
-# "pie", "pisa", 
+# "pie", "pisa",
 var words_mslcp = ["mesa", "mula", "casa", "cole", "oso", "mamá", "papá", "pupa", "pala", "polo", "sopa", "copa", "pico", "ola", "saco", "cama", "sapo", "mapa", "come", "cola", "lupa", "peso", "pila", "púa", "mío", "cose"]
 var words_tjzr = ["pato", "moto", "tomate", "pelota", "maleta", "zumo", "rosa", "ropa", "ojo", "caja", "perro", "carro", "lazo", "pozo", "taza", "rata", "pijama", "tío", "río", "patata", "zapato", "rojo", "moja"]
 var words_nbvfh = ["vaso", "vaca", "bota", "boca", "foca", "feo", "fila", "café", "vino", "pino", "nata", "rana", "sofá", "camino", "luna", "lana", "piano", "vela", "fuma", "oveja", "abeja", "humo", "búho", "hoja", "hielo", "cohete"]
-# "hora", 
+# "hora",
 var words_dgllchr = ["nido", "llave", "valla", "gato", "goma", "gusano", "caballo", "cara", "pirata", "llora", "tira", "mago", "dedo", "dado", "codo", "gallina", "coche", "leche", "chino", "chupete", "ocho", "oro", "ducha", "moda", "paga", "médico", "madera"]
 var words_nyx = ["piña", "caña", "niña", "rayo", "payaso", "taxi", "boxeo", "baño", "yema", "cabaña", "araña"]
 var words_quceci = ["queso", "quema", "raqueta", "quita", "pequeño", "máquina", "cine", "cena", "cereza", "cero", "maceta", "cielo"]
@@ -20,7 +20,7 @@ var words_locked = ["plato", "pluma", "flecha", "flor", "globo", "clavo", "clase
 var words_complex = ["triste", "fresco", "plástico", "brusco", "trasto", "blanco", "planta"]
 var phrases = [ "casi la pilla", "dame la mano", "dame zumo de uva", "me como la sopa yo solo", "me duele la mano", "mi mono me mola", "mira esa vaca rosa", "no me da la gana", "no veo nada", "pásame el pan", "se ha ido mi loro", "toma el tomate", "tócame la cabeza", "¿me la pelas?", "échame leche","mira la foto de mi perro"]
 var letters_font = load("res://font_escolar_112.tres")
-var aplause = load("res://assets/audio/aplause.ogg") 
+var aplause = load("res://assets/audio/aplause.ogg")
 
 var letter_buttons = []
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -64,10 +64,10 @@ func _ready():
 		globals.num_words = 1
 		globals.locution = globals.settings["phrases"]["locution"]
 		globals.sound_win = globals.settings["phrases"]["sound_win"]
-		
+
 	upper_control()
 	spaces = []
-	word_containers.append(get_node("Word1"))	
+	word_containers.append(get_node("Word1"))
 	word_containers.append(get_node("Word2"))
 	word_containers.append(get_node("Word3"))
 	word_containers.append(get_node("Word4"))
@@ -80,15 +80,15 @@ func _ready():
 	time_keyboard = 0
 	generate_words()
 	restart_game()
-	
+
 func upper_control():
 	for node in get_node("GridContainer").get_children():
 		node.get_node("Label").uppercase = globals.caps
 		if globals.caps:
 			node.get_node("Label").set_position(Vector2(0,5))
-		else:	
+		else:
 			node.get_node("Label").set_position(Vector2(0,-10))
-			
+
 func restart_game():
 	for space in spaces:
 		if space != null:
@@ -96,15 +96,15 @@ func restart_game():
 			parent.remove_child(space)
 			space.queue_free()
 	spaces = []
-	
+
 	for lc in ["Word1", "Word2", "Word3", "Word4", "Word5", "Word6", "Phrase"]:
 		for node in get_node(lc + "/VBoxContainer/letters").get_children():
 			get_node("Phrase/VBoxContainer/letters").remove_child(node)
-	
-		
+
+
 	current_words = select_words()
 	current_word_num = 0
-	
+
 	if globals.all_alphabet:
 		addValidLetters(alphabet)
 	else:
@@ -126,24 +126,24 @@ func restart_game():
 					l = "u"
 				words_letters.append(l)
 		addValidLetters(words_letters)
-		
+
 	for container in word_containers:
 		container.position.y = 10000
-		
-	if globals.play_word:	
+
+	if globals.play_word:
 		for i in range(len(current_words)):
 			create_word(i,len(current_words),current_words[i])
 	else:
 		create_word(6, len(current_words), current_words[0])
-		
+
 	current_space_num = 0
 	spaces[current_space_num].mark_as_current()
 
 
-func generate_words():		
+func generate_words():
 	shuffled_words = shuffle_list(choose_valid_words())
 	word_index = 0
-	
+
 func choose_valid_words():
 	var w = []
 	if globals.play_word:
@@ -171,19 +171,19 @@ func choose_valid_words():
 			w += words_complex
 	else:
 		w += phrases
-		
+
 	return w
-	
-func select_words():			
-	
+
+func select_words():
+
 	var w = []
 	for i in range(globals.num_words):
 		w.append(shuffled_words[word_index])
 		word_index = (word_index + 1) % len(shuffled_words)
 	return w
-		
-func addValidLetters(letters):	
-	for l in get_node("GridContainer").get_children():		
+
+func addValidLetters(letters):
+	for l in get_node("GridContainer").get_children():
 		if (l.get_node("Label").get_text() in letters):
 			l.get_node("Label").set("custom_colors/font_color", "#FFFFFF")
 		else:
@@ -191,15 +191,15 @@ func addValidLetters(letters):
 
 func _process(delta):
 	time_keyboard += delta
-	if mode == MODE_ANIM:			
+	if mode == MODE_ANIM:
 		failsafe -= delta
 		if failsafe <=0:
-			end_anim()				
-	if mode == MODE_SUCCESS:			
+			end_anim()
+	if mode == MODE_SUCCESS:
 		failsafe -= delta
 		if failsafe <=0:
-			end_success()				
-			
+			end_success()
+
 func end_anim():
 	spaces[current_space_num].mark_as_current()
 	mode = MODE_PLAYER
@@ -216,7 +216,7 @@ func safe_word(word):
 	safe_name = safe_name.replace("?","")
 	return safe_name
 
-	
+
 func create_word(num, total, word):
 	var safe_name = safe_word(word)
 	var container = word_containers[num]
@@ -224,7 +224,7 @@ func create_word(num, total, word):
 	var texture
 	var label
 	if globals.play_word:
-		image = container.get_node("VBoxContainer/pictures/img") 
+		image = container.get_node("VBoxContainer/pictures/img")
 		texture = load("res://assets/img/words/"+safe_name+".png")
 		label = container.get_node("VBoxContainer/pictures/lbl")
 	else:
@@ -232,16 +232,16 @@ func create_word(num, total, word):
 		texture = load("res://assets/img/phrases/"+safe_name+".png")
 		total = -1
 		label = container.get_node("VBoxContainer/lbl")
-		
+
 	image.set_texture(texture)
-	
+
 	if globals.see_words:
 		label.uppercase = globals.caps
 		label.set_text(word)
 		label.show()
 	else:
 		label.hide()
-		
+
 	for i in range(len(word)):
 		if word[i] == ' ':
 			var l = Label.new()
@@ -258,10 +258,10 @@ func create_word(num, total, word):
 			space.set_letter(word[i])
 			container.get_node("VBoxContainer/letters").add_child(space)
 			spaces.append(space)
-		
+
 	spaces.append(null)
-		
-		
+
+
 	if total == 1:
 		container.set_scale(Vector2(0.8, 0.8))
 		container.position.x = 0
@@ -333,7 +333,7 @@ func create_word(num, total, word):
 			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 		elif num == 5:
 			container.position.x = 852
-			container.position.y = 230	
+			container.position.y = 230
 			container.get_node("VBoxContainer").rect_size.x = 426 / 0.35 + 50
 	if total == -1: # Phrase
 		container.set_scale(Vector2(0.55, 0.55))
@@ -343,12 +343,12 @@ func create_word(num, total, word):
 		else:
 			container.position.y = 110
 	container.show()
-	
-	
+
+
 func shuffle_list(list):
 	var shuffled_list = []
 	var index_list = range(list.size())
-	for i in range(list.size()):        
+	for i in range(list.size()):
 		var x = randi()%index_list.size()
 		shuffled_list.append(list[x])
 		index_list.remove(x)
@@ -366,18 +366,18 @@ func _on_ButtonReload_pressed():
 		restart_game()
 
 
-func _on_letter_pressed(l):	
+func _on_letter_pressed(l):
 	if mode == MODE_PLAYER and current_space_num < len(spaces):
 		if spaces[current_space_num].simple_letter == l:
 			spaces[current_space_num].mark_as_correct()
-			current_space_num += 1			
+			current_space_num += 1
 			if current_space_num < len(spaces):
 				if (spaces[current_space_num] == null):
 					# word end
 					start_success()
 				else:
 					spaces[current_space_num].mark_as_current()
-				
+
 		else:
 			mode = MODE_ANIM
 			spaces[current_space_num].mark_as_incorrect()
@@ -389,7 +389,7 @@ func save_statistics(letter):
 	if globals.settings["statistics"]["letters"].has(letter):
 		current = globals.settings["statistics"]["letters"][letter]
 	globals.settings["statistics"]["letters"][letter] = current + 1
-	
+
 	var word = current_words[current_word_num]
 	current = 0
 	if globals.play_word:
@@ -400,26 +400,26 @@ func save_statistics(letter):
 		if globals.settings["statistics"]["phrases"].has(word):
 				current = globals.settings["statistics"]["phrases"][word]
 		globals.settings["statistics"]["phrases"][word] = current + 1
-	
-	globals.save_game()	
-		
+
+	globals.save_game()
+
 func start_success():
 	var safe_name = safe_word(current_words[current_word_num])
 	if globals.locution:
 		_play_word(safe_name, globals.sound_win)
 	elif globals.sound_win:
 		play_aplause(null)
-		
-	mode = MODE_SUCCESS	
+
+	mode = MODE_SUCCESS
 	failsafe = 1
 	var i = current_space_num -1
-	while i >= 0 and spaces[i] != null:		
+	while i >= 0 and spaces[i] != null:
 		spaces[i].mark_as_success()
 		i -= 1
-	
-func end_success():	
+
+func end_success():
 	var i = current_space_num -1
-	while i >= 0 and spaces[i] != null:		
+	while i >= 0 and spaces[i] != null:
 		spaces[i].mark_as_correct()
 		i -= 1
 	current_space_num += 1
@@ -429,11 +429,11 @@ func end_success():
 	mode = MODE_PLAYER
 
 
-func _play_word(safe_name, play_aplause):	
-	var music_player = get_node("AudioStreamPlayer")	
-	var sfx = load("res://assets/audio/" + safe_name + ".ogg") 
-	sfx.set_loop(false) 
-	music_player.stream = sfx	
+func _play_word(safe_name, play_aplause):
+	var music_player = get_node("AudioStreamPlayer")
+	var sfx = load("res://assets/audio/" + safe_name + ".ogg")
+	sfx.set_loop(false)
+	music_player.stream = sfx
 	music_player.play()
 	if play_aplause:
 		music_player.connect("finished", self, "play_aplause", [music_player])
@@ -442,7 +442,7 @@ func play_aplause(who):
 	get_node("AudioStreamPlayer").disconnect("finished", self, "play_aplause")
 	get_node("AudioStreamPlayer").stream = aplause
 	get_node("AudioStreamPlayer").play()
-		
+
 
 func _on_img_gui_input( ev, num ):
 	if ev is InputEventMouseButton:
@@ -450,7 +450,7 @@ func _on_img_gui_input( ev, num ):
 			if ev.pressed:
 				var safe_name = safe_word(current_words[num-1])
 				_play_word(safe_name, false)
-				
+
 
 
 func _on_Letter_gui_input(ev, l):
@@ -467,7 +467,7 @@ func _input(ev):
 			time_keyboard = 0
 			last_key = l
 			_on_letter_pressed(l)
-		
+
 
 
 func _on_ButtonPrev_pressed():
